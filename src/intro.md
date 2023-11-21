@@ -16,7 +16,6 @@
 - [Bahasa Indonesia](https://apps.ankiweb.net/docs/manual.id.html)
 - [Deutsch](http://www.dennisproksch.de/anki)
 - [Español](https://apps.ankiweb.net/docs/manual.es.html)
-- [Ελληνικά](https://apps.ankiweb.net/docs/manual.el.html)
 - [Français](https://apps.ankiweb.net/docs/manual.fr.html)
 - [Italiano](https://web.archive.org/web/20160423223801/http://192.167.9.6/Anki_ITA/Manual_ITA.htm)
 - [Polski](https://platynowy.github.io/anki-manual/)
