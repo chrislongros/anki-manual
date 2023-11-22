@@ -1,15 +1,15 @@
-# Resources
+# Πηγές
 
-The SuperMemo site has a lot of good information about spaced repetition
-and memory: <https://supermemo.guru/wiki/SuperMemo_Guru>
+Η ιστοσελίδα του SuperMemo έχει πολλές καλές πληροφορίες σχετικά με τις αρχές του spaced repetition
+και την μνήμη: <https://supermemo.guru/wiki/SuperMemo_Guru>
 
-Michael Nielsen has written a [thorough piece](http://augmentingcognition.com/ltm.html)
-about long term memory and how he uses Anki. He also provides a
-[condensed version](https://twitter.com/michael_nielsen/status/957763229454774272)
-as a series of tweets.
+Ο Michael Nielsen έχει γράψει ένα [εκτενές άρθρο](http://augmentingcognition.com/ltm.html)
+για την μακροχρόνια μνήμη και για το πως χρησιμοποιεί το Anki. Παρέχει επίσης μια
+[συμπυκνωμένη εκδοχή](https://twitter.com/michael_nielsen/status/957763229454774272)
+ως μια σειρά από tweets.
 
-Some medical students have banded together to make a paid-for guide focusing on
-the use of Anki in medical school: <https://www.theanking.com/anki-mastery-course>
+Μερικοί φοιτητές ιατρικής δημιούργησαν μια ομάδα και έναν οδηγό έναντι πληρωμής που επικεντρώνεται στη
+χρήση του Anki στην ιατρική σχολή: <https://www.theanking.com/anki-mastery-course>
 
-Soren Bjornstad has written [a series of extensive articles](https://controlaltbackspace.org/categories/memory/)
-about memory, SRS and how to use Anki effectively.
+Ο Soren Bjornstad έχει γράψει [μια σειρά από λεπτομερή άρθρα](https://controlaltbackspace.org/categories/memory/)
+για την μνήμη, το λογισμικό spaced repetition και την αποτελεσματική χρήση του Anki.
