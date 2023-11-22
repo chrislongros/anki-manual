@@ -1,3 +1,3 @@
-# Frequently Asked Questions
+# Συχνές ερωτήσεις
 
-Please see <https://faqs.ankiweb.net>
+Παρακαλούμε δείτε <https://faqs.ankiweb.net>
