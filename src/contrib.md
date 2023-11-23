@@ -1,4 +1,4 @@
-# Contributing
+# Συνεισφέροντας
 
 <!-- toc -->
 
@@ -60,14 +60,14 @@ them about it.
 
 ## Sharing Add-ons
 
-Please see <https://addon-docs.ankiweb.net/sharing.html>
+Παρακαλούμε δείτε <https://addon-docs.ankiweb.net/sharing.html>
 
-## Translating Anki
+## Μεταφράζοντας το Anki
 
-Please see <https://translating.ankiweb.net>
+Παρακαλούμε δείτε <https://translating.ankiweb.net>
 
-## Contributing Code
+## Συνεισφέροντας κώδικα
 
-Anki's source code is available at <https://github.com/ankitects/anki>
+Ο κώδικας του Anki είναι διαθέσιμος στ is available at <https://github.com/ankitects/anki>
 
 Before contributing, please see [contributing.md](https://github.com/ankitects/anki/blob/main/docs/contributing.md).

@@ -1,11 +1,10 @@
-# Syncing with AnkiWeb
+# Συγχρονισμός με το AnkiWeb
 
 <!-- toc -->
 
-AnkiWeb is a service that allows you to keep your collection
-synchronized across multiple devices, and to study online. Please sign
-up for a [free account](https://ankiweb.net/) before following the steps
-below.
+Το AnkiWeb είναι μία υπηρεσία που σας επιτρέπει να διατηρήσετε τη συλλογή σας
+συγχρονισμένη μεταξύ πολλαπλών συσκευών και να διαβάσετε online. Παρακαλούμε εγγραφείτε για έναν
+[δωρεάν λογαριασμό](https://ankiweb.net/) πρωτού ακολουθήσετε τα παρακάτω βήματα.
 
 ## Intro Videos
 
@@ -36,7 +35,7 @@ profile for each user, each user will need to create their own AnkiWeb
 account to sync with. If you attempt to synchronize multiple profiles
 with a single AnkiWeb account, you will lose data.
 
-## Automatic Syncing
+## Αυτόματος συγχρονισμός
 
 Once syncing is enabled, Anki will automatically sync each time your
 collection is closed or opened. If you would prefer to synchronize
