@@ -1,33 +1,33 @@
-# Profiles
+# Προφίλ
 
-If more than one person wants to use Anki on your computer, you can set
-up a separate profile for each user. Each user profile has their own
-collection, and own program settings. Add-ons are shared across profiles.
-Profiles are configured by going to the File menu and choosing "Switch Profile".
+Αν ένα ή περισσότερα άτομα θέλουν αν χρησιμοποιήσουν το Anki στον υπολογιστή σας, μπορείτε να ορίσετε
+ένα ξεχωριστό προφίλ για κάθε χρήστη. Το προφίλ κάθε χρήστη έχει τη δική του συλλογή
+και κατέχει τις δικές του ρυθμίσεις του προγράμματος. Τα πρόσθετα μοιράζονται μεταξύ των προφίλ.
+Τα προφίλ ρυθμίζονται πηγαίνοντας στο μενού αρχείου και επιλέγοντας "Αλλαγή προφίλ".
 
-**Only a single profile can be synced to an AnkiWeb account.**
-If you have different users on your computer, each user will
-need to set up a separate AnkiWeb account for their profile. If you attempt
-to link two or more profiles to the same AnkiWeb account, you will overwrite
-the data from one profile with the data from the other.
+**Μόνο ένα προφίλ μπορεί να συγχρονιστεί με έναν λογαριασμό AnkiWeb.**
+Αν έχετε διαφορετικούς χρήστες στον υπολογιστή σας, ο καθένας θα πρέπει
+να έχει ξεχωριστό λογατισμό AnkiWeb για το προφίλ του. Αν επιχειρήσετε
+να συνδέσετε δύο ή περισσότερα προφίλ με τον ίδιο λογαρισμό AnkiWeb, θα αντικαταστήσετε
+τα δεδομένα του ενός προφίλ με αυτά του άλλου.
 
-Profiles are primarily intended to be used by different people, and are not
-recommended for splitting up your own content.
-If you have created multiple profiles for yourself, the best option is to
-merge them into a single profile. You can do so by exporting one deck from
-profile A, and then importing it into profile B, repeating for any other decks
-in profile A, until everything is in profile B.
+Τα προφίλ στοχεύουν στη χρήση τους από διαφορετικά άτομα και δεν προτείνονται για τον διαχωρισμό
+του δικού σας υλικού.
+Αν δημιουργήσατε πολλαπλά προφίλ για τον εαυτό σας, η καλύτερη επιλογή είναι
+η συγχώνευσή τους σε ένα προφίλ. Μπορείτε να το κάνετε με την εξαγωγή μιας τράπουλας
+του προφίλ Α και μετά την εισαγωγή της στο προφίλ B, επαναλαμβάνοντας για κάθε τράπουλα
+στο προφίλ Α, μέχρι τα πάντα να βρίσκονται στο προφίλ Β.
 
-AnkiDroid does not support profiles.
+Το AnkiDroid δεν υποστηρίζει προφίλ.
 
-## Profiles window
+## Το παράθυρο Προφίλ
 
-From the Profiles window (accessible via File>Switch Profile from the main window), you can:
+Από το παράθυρο Προφίλ (προσβάσιμο μέσω Αρχεία>Αλλαγή προφίλ από το κεντρικό παράθυρο), μπορείτε:
 
-- Open / Add / Rename / Delete user profiles.
-- Quit the program.
-- Restore an [automatic backup.](./backups.md)
-- Downgrade your collection, which is necessary if you want to open it with
-  an earlier Anki release. If you skip this step, you may get an error message
-  when opening your collection in an older Anki version, and you will need to
-  return to this version, downgrade, then try again.
+- να ανοίξετε / προσθέσετε / επονομάσετε / διαγράψετε προφίλ χρηστών.
+- να κλείσετε το πρόγραμμα.
+- να επαναφέρετε ένα [αυτόματο αντίγραφο ασφαλείας.](./backups.md)
+- υποβαθμίσετε τη συλλογή σας, αν θέλετε να την ανοίξετε με
+  μια παλαιότερη έκδοση Anki. Αν παραλείψετε αυτό το βήμα, μπορεί να λάβετε ένα μήνυμα σφάλματος
+  ανοίγοντας τη συλλογή με με μια παλαιότερη έκδοση Anki και θα πρεέπι να επιστρέψετε σε αυτή την έκδοση,
+  να υποβαθμίσετε και να ξαναπροσπαθήσετε.
