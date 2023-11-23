@@ -2,63 +2,51 @@
 
 <!-- toc -->
 
-## Sharing Decks Publicly
+## Δημόσια κοινοποίηση τράπουλας
 
-To share decks with the general public, [synchronize](syncing.md) them
-with AnkiWeb, then log into AnkiWeb and click on "Share" from the menu
-next to the deck you wish to share.
+Για να μοιραστείτε τράπουλες δημοσίως, [συγχρονίστε](syncing.md) τες
+με το AnkiWeb, κάντε log in στο AnkiWeb και πατήσε το "Share" δίπλα στο μενού
+της τράπουλας που επιθυμείτε να κοινοποιήσετε.
 
-If you shared a deck previously (including with previous versions of
-Anki), you can update it by clicking "Share" as above. Updating a shared
-deck will not reset the download counts or ratings. You can delete a
-shared deck that you have uploaded using the Delete button on the shared
-deck's page.
+Αν μοιραστήκατε προηγουμένως μια τράπουλα (συμπεριλαμβανομένων παλαιότερων
+εκδόσεων του Anki), μπορείτε να την ανανεώσετε κάνοντας κλικ "Share" όπως παραπάνω.
+Η ενημέρωση μια κοινόχρηστης τράπουλας δεν θα αλλάξει τον αριθμό λήψεων ή τις αξιολογήσεις.
+Μπορείτε να διαγράψετε μια κοινή τράπουλα που έχετε ανεβάσει χρησιμοποιώντας το
+κουμπί της διαγραφής στη σελίδα της τράπουλας.
 
-When updating a deck, AnkiWeb expects the deck to be at the same
-location as before. If you shared a deck when it was called "Korean
-Verbs" for example, and then renamed it to "Korean::Korean Verbs",
-resharing will not be able to update the existing copy. If you have
-forgotten the original name, you can guess it by downloading the
-deck on AnkiWeb and importing it (File > Import) in a new profile
-(File > Switch profile > Add). Then you can copy the exact name of the
-deck when it was first shared. If this doesn't work, please contact
-support.
+Όταν ενημερώνετε μια τράπουλα, το AnkiWeb περιμένει ότι αυτή θα είναι
+στην ίδια τοποθεσία όπως πριν. Αν κοινοποιήσατε μια τράπουλα όταν το όνομα της ήταν για παράδειγμα "Korean Verbs" και μετά την μετονομάσατε σε "Korean::Korean Verbs",
+η επανακοινοποίηση της δεν θα ενημερώσει το υπάρχον αντίγραφο.
+Αν ξεχάσατε το αρχικό όνομα, μπορείτε να το μαντέψετε κατεβάζοντας την τράπουλα
+από το AnkiWeb και εισάγοντάς την (Αρχείο > Εισαγωγή) σε ένα νέο προφίλ
+(Αρχείο > Αλλαγή προφίλ > Προσθήκη). Mπορείτε ύστερα να αντιγράψετε το ακριβές όνομα
+της τράπουλας όπως την πρώτη φορά που κοινοποιήθηκε. Αν αυτό δεν λειτουργήσει, παρακαλούμε
+αναζητήστε υποστήριξη.
 
-When you update a shared deck, users who downloaded the deck previously
-will not automatically receive updates. If they download the deck again
-and re-import it, newly added material will be imported without altering
-their existing study progress, provided neither you nor the user has
-altered the note type since the first import.
+Όταν αναβαθμίζετε μια κοινόχρηστη τράπουλα, οι χρήστες που την έχουν κατεβάσει προηγουμένως
+δεν θα λάβουν αυτόματα τις ενημερώσεις. Αν ξανακατεβάσουν την τράπουλα και την επανεισάγουν,
+το νέο υλικό θα εισαχθεί χωρίς να αλλάξει την πρόοδο της μελέτης τους, με την προϋπόθεση ότι εσείς και ο χρήστης δεν έχετε μεταβάλλει τον τύπο σημείωσης από την πρώτη εισαγωγή.
 
-## Sharing Decks Privately
+## Ιδιωτική κοινοποίηση τράπουλας
 
-If you’d like to share decks with a limited group of people (such as a
-study group or class) rather than the general public, you can do so by
-sharing them outside of AnkiWeb.
+Αν θέλετε να μοιραστείτε τράπουλες με μια περιορισμένη ομάδα ατόμων (όπως μια τάξη ή ομάδα μελέτης) αντί ενός δημοσίου κοινού, μπορείτε να το κάνετε κοινοποιώντας τες εκτός του AnkiWeb.
 
-To share a deck privately, go to the File menu and choose Export. Select
-a single deck (not "All Decks"), and turn off "include scheduling
-information". This will produce an .apkg file which you can share with
-others.
+Για την ιδιωτική κοινοποίηση μιας τράπουλας, πηγαίνετε στο μενού Αρχείο και επιλέξτε Εξαγωγή. Επιλέξτε μια μόνο τράπουλα (όχι "Όλες οι τράπουλες"), και απενεργοποιήστε το "συμπερίληψη πληροφοριών προγραμματισμού". Αυτό θα δημιουργήσει ένα αρχείο .apkg το οποίο μπορείτε
+να μοιραστείτε με άλλους.
 
-You can share the .apkg file by emailing it to people, placing it on a
-website or shared folder, or using a free file sharing service like
-Dropbox or Google Drive and sending people a link.
+Μπορείτε να μοιραστείτε το αρχείο .apkg στέλντοντας το ως email ή τοποθετώντας το
+σε μια ιστοσελίδα ή κοινό φάκελο. Μια άλλη δυνατότητα είναι η χρήση υπηρεσιών όπως το Dropbox και Google Drive και η αποστολή του ως σύνδεσμο.
 
-Both the computer version and mobile clients make it easy to import from
-an apkg file simply by clicking or tapping on it. AnkiWeb does not have
-the ability to import apkg files however, so the recipients of your deck
-will need to have the computer version or Anki on their mobile device.
+Τόσο η desktop έκδοση όσο και η έκδοση για κινητά, κάνουν εύκολη απλά με ένα κλικ
+την εισαγωγή από ένα αρχείο apkg. Το AnkiWeb ωστόσο δεν έχει τη δυνατότητα εισαγωγής αρχείων apkg, έτσι ώστε οι παραλήπτες της τράπουλας σας θα πρέπει να έχουν εγκατεστημένο το Anki
+στον υπολογιστή ή το κινητό τους.
 
-When a user imports an .apkg file, cards that already exist in their
-collection will be ignored and any new cards will be added. As long as
-they use the same note type, modified cards will also be updated. To
-prevent data loss, cards that have been deleted in the new apkg file
-will not be deleted in the user’s collection, so if you need to delete
-cards from users' decks for whatever reason, you will need to contact
-them about it.
+Όταν ένας χρήστης εισάγει ένα αρχείο .apkg, οι κάρτες που ήδη υπάρχουν στη συλλογή τους
+θα παραλειφθούν και οι νέες θα προστεθούν. Όσο αυτές έχουν τον ίδιο τύπο σημείωσης,
+οι τροποποιημένες κάρτες θα ενημερωθούν. Για την πρόληψη απώλειας δεδομένων, κάρτες που διαγράφηκαν στο νέο αρχείο apkg δεν θα διαγραφούν στη συλλογή του χρήστη. Με αυτόν τον τρόπο
+αν πρέπει για οποιοδήποτε λόγο να διαγράψετε κάρτες από τράπουλες χρηστών, θα πρέπει να επικοινωνήσετε μαζί τους σχετικά με αυτό.
 
-## Sharing Add-ons
+## Κοινοποίηση πρόσθετων
 
 Παρακαλούμε δείτε <https://addon-docs.ankiweb.net/sharing.html>
 
@@ -68,6 +56,6 @@ them about it.
 
 ## Συνεισφέροντας κώδικα
 
-Ο κώδικας του Anki είναι διαθέσιμος στ is available at <https://github.com/ankitects/anki>
+Ο κώδικας του Anki είναι διαθέσιμος στην ιστοσελίδα <https://github.com/ankitects/anki>
 
-Before contributing, please see [contributing.md](https://github.com/ankitects/anki/blob/main/docs/contributing.md).
+Πριν συνεισφέρεται, παρακαλούμε δείτε [contributing.md](https://github.com/ankitects/anki/blob/main/docs/contributing.md).
