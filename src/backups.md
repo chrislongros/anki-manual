@@ -1,87 +1,79 @@
-# Backups
+# Αντίγραφα ασφαλείας
 
 <!-- toc -->
 
-## Automatic backups
+## Αυτόματα αντίγραφα ασφαλείας
 
-Anki will create automatic backups of your card data. These include the text
-on your cards and your scheduling information, but do not include sounds or
-image files.
+Το Anki δημιουργεί αυτόματα αντίγραφα ασφαλείας των δεδομένων των καρτών σας. Αυτά περιλαμβάνουν το κείμενο
+των καρτών και τις πληροφορίες προγραμματισμού, αλλά όχι αρχεία ήχου ή εικόνας.
 
-Automatic backups can be useful to recover from mistakes, but you should not
-rely solely on them. Because they are stored on your local device, they will not
-protect you if your device breaks or is stolen. We recommend you combine them with
-[manual backups](#manual-colpkg-backups).
+Τα αυτόματα backups μπορεί να είναι χρήσιμα στην αποκατάσταση από λάθη, αλλά δεν πρέπει
+να βασίζεστε αποκλειστικά σε αυτά. Επειδή αποθηκεύονται στην τοπική σας συσκευή, δεν σας προστατεύουν
+σε περίπτωση που η συσκευή χαλάσει ή κλαπεί. Προτείνουμε να τα συνδυάσετε με
+[χειροκίνητα backups](#manual-colpkg-backups).
 
-### Restoring
+### Αποκατάσταση
 
-To restore from an automatic backup:
+Για να κάνετε επαναφορά από ένα αυτόματο backup:
 
-- Open Anki, and choose Switch Profile from the File menu.
-- Click on the "Open Backup" button.
-- Select the backup you wish to restore from.
+- Ανοίξτε το Anki και επιλέξτε Αλλαγή προφίλ από το μενού αρχείου.
+- Πατήστε το κουμπί "Άνοιγμα αντιγράφου ασφαλείας".
+- Επιλέξτε το backup το οποίο επιθυμείτε να επαναφέρετε.
 
-When restoring from a backup, any changes made since the backup was created will be lost.
+Όταν κάνετε επαναφορά από ένα backup, οποιεσδήποτε αλλαγές κάνατε από τη στιγμή που αυτό δημιουργήθηκε θα χαθούν.
 
-Anki disables automatic syncing and backups when you restore from a backup. Once you're
-happy that you've restored the correct backup, close and re-open Anki to return to normal.
+Το Anki απενεργοποιεί τον αυτόματο συγχρονισμό και τα αντίγραφα όταν κάνετε επαναφορά από ένα αντίγραφο ασφαλείας.
+Όταν είστε ικανοποιημένοι ότι αποκαταστήσατε τη συλλογή σας με το σωστό αντίγραφο, κλείστε και επανεκκινήστε το Anki.
 
 ### Anki 2.1.50+
 
-Backups are created periodically. You can configure the time between backups
-in the [preferences](preferences.md) screen. The default is 30 minutes.
+Τα αντίγραφα δημιουργούνται περιοδικά. Μπορείτε να ρυθμίσετε τον χρόνο μεταξύ τους στην οθόνη
+[προτιμήσεων](preferences.md). Η προεπιλογή είναι 30 λεπτά.
 
-Certain operations will trigger a backup, even if the configured time has not
-elapsed yet:
+Μερικές ενέργειες προκαλούν τη δημιουργία αντιγράφου, ακόμα και αν δεν έχει επέλθει ο ρυθμισμένος χρόνος:
 
-- A one-way sync download
-- Importing a .colpkg file using File>Import
-- Tools>Check Database
+- Συγχρονισμός προς μια κατεύθυνση
+- Εισαγωγή ενός αρχείου .colpkg κάνοντας χρήση Αρχείο>Εισαγωγή
+- Εργαλεία>Έλεγχος βάσης δεδομένων
 
-After backups are two days old, Anki will start removing some of the older ones.
-You can control how many daily, weekly and monthly backups you'd like to keep.
+Όταν τα αντίγραφα είναι παλαιότερα των δύο ημερών, το Anki θα αρχίσει να αφαιρεί μερικά από τα παλαιότερα.
+Μπορείτε να ελέγξετε πόσα ημερήσια, εβδομαδιαία και μηνιαία backups θέλετε να κρατήσετε.
 
-Backups created with 2.1.50 will not be importable into older Anki versions.
+Τα αντίγραφα που δημιουργήθηκαν με την έκδοση 2.1.50 δεν μπορούν να εισαχθούν σε παλαιότερες εκδόσεις Anki.
 
-### Older Anki versions
+### Παλαιότερες εκδόσεις Anki
 
-Each time your collection is closed (when closing Anki, switching
-profiles, or doing a full sync download), Anki creates a backup. By default
-it will store up to 30 backups; you can adjust this in the [preferences](preferences.md).
+Κάθε φορά που κλείνει η συλλογή σας (όταν κλείνει το Anki, γίνεται αλλαγή προφίλ ή
+με ένα full sync download), το Anki κάνει ένα backup. Ως προεπιλογή κρατάει έως και 30 αντίγραφα, αλλά αυτό μπορεί να προσαρμοστεί στις [προτιμήσεις](preferences.md).
 
-## Manual colpkg backups
+## Χειροκίνητα αντίγραφα colpkg
 
-### Restoring
+### Επαναφορά
 
-You can restore from a manual backup by using File>Import.
+Μπορείτε να επαναφέρετε ένα χειροκίνητο backup χρησιμοποιώντας την λειτουργία Αρχείο>Εισαγωγή.
 
-### Creating
+### Δημιουργία
 
-In Anki 2.1.50+, you can use File>Create Backup to trigger an immediate backup. This
-functions like regular automatic backups, and does not include media files.
+Στο Anki 2.1.50+, μπορείτε να χρησιμοποιήσετε Αρχείο>Δημιουργία αντιγράφου ασφαλείας για να κάνετε άμεσα ένα αντίγραφο. Αυτό λειτουργεί όπως τα κανονικά αυτόματα backups, αλλά δεν περιλαμβάνει αρχεία πολυμέσων.
 
-To create a backup that includes your sounds and images:
+Για να δημιουργήσετε ένα αντίγραφο που συμπεριλαμβάνει τους ήχους και τις εικόνες σας:
 
-- Select Export from the File menu.
-- Ensure "Anki collection package (.colpkg)" is selected.
-- Enable the "include media" option.
+- Επιλέξτε Εξαγωγή από το μενού αρχείου.
+- Βεβαιωθείτε ότι το "Πακέτο συλλογής Anki (.colpkg)" είναι επιλεγμένο.
+- Ενεργοποιήστε την επιλογή  "συμπερίληψη πολυμέσων".
 
-This will create a .colpkg file that contains all of your cards and any sounds/images they
-use. We recommend you store the file somewhere safe, like a different device, or a cloud-based
-file storage service like Dropbox or Google Drive.
+Αυτό θα δημιουργήσει ένα αρχείο .colpkg που περιέχει όλες τις κάρτες σας με ήχους/εικόνες που αυτές χρησιμοποιούν. Προτείνουμε να αποθηκεύσετε το αρχείο κάπου ασφαλές όπως σε μια άλλη συσκευή ή σε υπηρεσίες cloud (Dropbox ή Google Drive).
 
 ## AnkiWeb
 
-[Synchronising](./syncing.md) your collection with AnkiWeb provides some level of protection
-against your device being lost or stolen. If you need to restore your collection from AnkiWeb,
-you can force a one-way sync in the preferences screen, or sync from a new device, and then choose
-"Download".
+Ο [συγχρονισμός](./syncing.md) της συλλογής σας με το AnkiWeb παρέχει ένα επίπεδο προστασίας
+σε περίπτωση που χαθεί ή κλαπεί η συσκευή σας. Αν πρέπει να αντικαταστήσετε τη συλλογή σας από το AnkiWeb,
+μπορείτε να εξαναγκάσετε συγχρονισμό προς μία κατεύθυνση στην οθόνη των προτιμήσεων ή να κάνετε συγχρονισμό από μία νέα συσκευή και να επιλέξετε "Λήψη".
 
-## Deletion log
+## Αρχείο καταγραφής διαγραφών
 
-Anki logs deleted notes to a text file called deleted.txt in your
-profile folder. These notes are in a text format that can be read by
-File&gt;Import, though please note the import feature only supports a
-single note type at one time, so if you have deleted notes from
-different note types, you'll need to split the file into separate files
-for each note type first.
+Το Anki καταγράφει διεγραμμένες σημειώσεις σε ένα αρχείο κειμένου που ονομάζεται deleted.txt στον
+φάκελο του προφίλ σας. Αυτές οι σημειώσεις είναι σε μορφή κειμένου που μπορεί να διαβαστεί από
+Αρχείο&gt;Εισαγωγή, αλλά λάβετε υπόψη ότι η λειτουργία εισαγωγής υποστηρίζει μόνο έναν
+τύπο σημείωσης κάθε φορά. Έτσι αν έχετε διαγράψει σημειώσεις από διαφορετικούς τύπους
+θα πρέπει να διαχωρίσετε πρώτα το αρχείο σε διαφορετικά αρχεία, το καθένα για κάθε τύπο.
