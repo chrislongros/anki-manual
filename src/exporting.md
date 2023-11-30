@@ -1,37 +1,35 @@
-# Exporting
+# Εξαγωγή
 
 <!-- toc -->
 
-Exporting allows you to save part of your collection as a text file or
-packaged Anki deck. To export, click the File menu and choose 'Export'.
+Η εξαγωγή σας επιτρέπει να αποθηκεύσετε μέρος της συλλογής σας ως αρχείο κειμένου ή
+πακεταρισμένη τράπουλα Anki. Για την εξαγωγή πατήστε Εξαγωγή στο μενού Αρχείο.
 
-## Text Files
+## Αρχεία κειμένου
 
-If you choose "Notes in Plain Text", Anki will write the contents of the
-notes into a text file. Each field is separated by a tab. If you edit
-the resulting file and don't modify the first field, you can later
-import that file back into Anki and Anki will update your notes based on
-your edits, provided you import back into the same note type.
+Αν επιλέξετε "Σημειώσεις σε απλό κείμενο", το Anki θα γράψει το περιεχόμενο
+των σημειώσεων σε ένα αρχείο κειμένου. Κάθε πεδίο διαχωρίζεται από ένα tab.
+Αν επεξεργαστείτε το αρχείο που προκύπτει και δεν τροποποιήσετε το πρώτο πεδίο,
+μπορείτε αργότερα να εισάγετε αυτό το αρχείο ξανά στο Anki, και το Anki θα ενημερώσει
+τις σημειώσεις σας βάσει των αλλαγών, δεδομένου ότι η εισαγωγή γίνεται στον ίδιο τύπο σημείωσης.
 
-If you find yourself needing to edit the first field as well, you'll
-need to change the format of your note type so that the first field is
-an ID number rather than actual text. (You can install
-the [Add note id](https://ankiweb.net/shared/info/1672832404)
-add-on to make this easier.)
+Αν επιθυμείτε να επεξεργαστείτε και το πρώτο πεδίο, θα πρέπει να αλλάξετε
+την μορφή του τύπου σημείωσης έτσι ώστε το πρώτο πεδίο να είναι ένας ID αριθμός
+αντί για απλό κείμενο. (Μπορείτε να εγκαταστήσετε για μεγαλύτερη ευκολία το πρόσθετο [Add note id](https://ankiweb.net/shared/info/1672832404).)
 
-In order for formatting to be preserved when you import text back in,
-the text is exported with all the HTML formatting embedded in it.
+Για τη διατήρηση της μορφοποίησης κατά την εισαγωγή του κειμένου,
+το κείμενο εξάγεται με ενσωματωμένη όλη την μορφοποίηση HTML.
 
-## Packaged Decks
+## Πακεταρισμένες τράπουλες
 
-A 'packaged deck' consists of cards, notes, note types, and any sounds or
-images bundled up into a file ending with .apkg or .colpkg. You can use
-packaged decks to transfer cards between people, or for backing up parts
-of your collection.
+Μια 'πακεταρισμένη τράπουλα' αποτελείται από κάρτες, σημειώσεις, τύπους σημειώσεων και ήχους ή εικόνες
+ενωμένα μεταξύ τους σε ένα αρχείο με κατάληξη .apkg ή .colpkg. Μπορείτε να χρησιμοποιήσετε
+πακεταρισμένες τράπουλες για να μεταφέρετε κάρτες μεταξύ ατόμων ή για τη δημιουργία αντιγράφων ασφαλείας
+τμημάτων της συλλογής σας.
 
-There are two different kinds of packaged decks.
+Υπάρχουν δύο διαφορετικά είδη πακεταρισμένων τραπουλών.
 
-### Collection (.colpkg)
+### Συλλογή (.colpkg)
 
 When you export all decks with scheduling included, this is called a
 'collection package'. Anki will copy your entire collection into a file
@@ -49,14 +47,14 @@ devices.
 Existing media in your collection is not deleted when you import a
 collection package. To delete unused media, use Tools&gt;Check Media.
 
-If you choose Anki 2.1.50+ Collection Package format, imports and exports
-will be faster, and media files will be compressed, but the resulting
-.colpkg file will not be readable by older Anki clients.
+Αν επιλέξετε την μορφή πακέτου συλλογης Anki 2.1.50+, οι εισαγωγές και εξαγωγές
+θα είναι ταχύτερες και τα αρχεία πολυμέσων συμπιεσμένα, αλλά το αρχείο .colpkg
+δεν θα είναι αναγνώσιμο από παλαιότερες εκδόσεις Anki.
 
-### Deck (.apkg)
+### Τράπουλα (.apkg)
 
-Deck packages contain a single deck (and any child decks it may have).
-They have a filename ending with .apkg, but a filename other than
+Τα πακέτα τράπουλας περιέχουν μια μόνο τράπουλα (and any child decks it may have).
+Έχουν ένα όνομα αρχείου που τελειώνει σε .apkg, but a filename other than
 collection.apkg. When you import a deck package, Anki will add the
 contents into your collection, rather than overwriting your collection.
 
@@ -67,6 +65,6 @@ version will be made in your collection as well, but if you re-import an
 unchanged deck after making edits in your collection, the changes in
 your collection will be kept.
 
-If you choose not to include scheduling information, Anki will assume
-that you are sharing the deck with other people, and will remove marked
+Αν επιλέξετε να μην συμπεριλάβετε πληροφορίες προγραμματισμού, το Anki θα λάβει ως
+δεδομένο ότι μοιράζεστε την τράπουλα με άλλα άτομα και θα αφαιρέσει  remove marked
 and leech tags so that they will have a clean copy of it.

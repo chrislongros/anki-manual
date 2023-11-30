@@ -1,4 +1,4 @@
-# Deck Options
+# Επιλογές τράπουλας
 
 <!-- toc -->
 
@@ -23,8 +23,8 @@ you will be prompted to update when you attempt to review cards in 2.1.50+.
 
 For more info on deck options, please check:
 
-- [Deck Options Explained](https://forums.ankiweb.net/t/deck-options-explained/213)
-- [Deck Options in a Mental Map](https://forums.ankiweb.net/t/deck-options-in-a-mental-map/15757)
+- [Επιλογές τράπουλας Explained](https://forums.ankiweb.net/t/deck-options-explained/213)
+- [Επιλογές τράπουλας in a Mental Map](https://forums.ankiweb.net/t/deck-options-in-a-mental-map/15757)
 
 ## Presets
 
@@ -34,7 +34,7 @@ grouped into _presets_. By default, all newly created decks use
 the same preset.
 
 If you’d like to alter the settings on one deck but not other decks, click the
-arrow icon in the top right of the Deck Options window. The options are:
+arrow icon in the top right of the επιλογές τράπουλας window. The options are:
 
 - **Save**: Saves all modifications you've made since opening the deck options screen.
 - **Add**: Add a new preset, with the default options.
@@ -46,7 +46,7 @@ arrow icon in the top right of the Deck Options window. The options are:
 - **Save to all subdecks**. Like _Save_, but also assigns the selected preset to all
   subdecks of the currently selected deck.
 
-Deck Options are not retroactive. For example, if you change an option that
+Επιλογές τράπουλας are not retroactive. For example, if you change an option that
 controls the delay after failing a card, cards that you failed prior to
 changing the option will have the old delay, not the new one.
 

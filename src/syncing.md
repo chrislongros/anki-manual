@@ -6,34 +6,32 @@
 συγχρονισμένη μεταξύ πολλαπλών συσκευών και να διαβάσετε online. Παρακαλούμε εγγραφείτε για έναν
 [δωρεάν λογαριασμό](https://ankiweb.net/) πρωτού ακολουθήσετε τα παρακάτω βήματα.
 
-## Intro Videos
+## Εισαγωγικά Video
 
-For a quick introduction to syncing, please check out the
+Για μια γρήγορη εισαγωγή στον συγχρονισμό, παρακαλούμε δείτε τα
 [syncing intro videos](https://www.youtube.com/watch?v=YkiM4DPzSVc&list=PLGgmaKOIHykFoomqkBJAyGiDQ2kyiuTao&yt:cc=on).
 
 ## Setup
 
-To start syncing your collection across devices, click the sync button
+Για να αρχίσετε τον συγχρονισμό της συλλογής σας μεταξύ συσκευών, click the sync button
 (the top right one on the [main screen](studying.md#decks), or press 'y' on your keyboard.
 You’ll be prompted for your AnkiWeb ID and password, which you created
 in the signup process.
 
-When you synchronize your collection for the first time, Anki will ask
-you if you want to upload or download. If you have cards on your
-computer and your AnkiWeb account is empty, choose "upload" to send your
-data to AnkiWeb. If you have cards on AnkiWeb from another device, and
-no cards on your computer, choose "download" to replace the empty local
-collection with the cards that are on AnkiWeb. If you have different
-cards on both devices, [more work is required](#merging-conflicts) to
-avoid losing data.
+Όταν συγχρονίζετε τη συλλογή σας για πρώτη φορά, το Anki θα σας ρωτήσει
+αν θέλετε να κάνετε λήψη ή ανέβασμα. Αν έχετε κάρτες στον υπολογιστή σας
+και ο AnkiWeb λογαριασμός σας είναι κενός, επιλέξτε "ανέβασμα" για την αποστολή
+των δεδομένων σας στο AnkiWeb. Αν έχετε κάρτες στο AnkiWeb από μια άλλη συσκευή
+και καμία κάρτα στον υπολογιστή σας, επιλέξτε "λήψη" για την αντικατάσταση της άδειας
+τοπικής συλλογής με κάρτες του AnkiWeb. Αν έχετε διαφορετικές κάρτες και στις δύο συσκευές, [more work is required](#merging-conflicts) για να αποφύγετε να χάσετε δεδομένα.
 
 Once the initial one way sync is completed, Anki will be able to merge
 changes from multiple locations with a few exceptions.
 
-If you have multiple people using Anki on one machine and have created a
-profile for each user, each user will need to create their own AnkiWeb
-account to sync with. If you attempt to synchronize multiple profiles
-with a single AnkiWeb account, you will lose data.
+Αν διαφορετικά άτομα χρησιμοποιούν το Anki στον υπολογιστή σας και έχετε δημιουργήσει
+ένα προφίλ για κάθε χρήστη, ο καθένας θα πρέπει να έχει τον δικό του λογαριασμό AnkiWeb
+για τον συγχρονισμός του. Αν δοκιμάσετε να συγχρονίσετε πολλαπλά προφίλ με έναν AnkiWeb λογαριασμό
+θα χάσετε δεδομένα.
 
 ## Αυτόματος συγχρονισμός
 
@@ -41,16 +39,16 @@ Once syncing is enabled, Anki will automatically sync each time your
 collection is closed or opened. If you would prefer to synchronize
 manually, you can disable automatic syncing in Anki’s [preferences.](preferences.md#syncing)
 
-## Button Color
+## Χρώμα κουμπιού
 
-The sync button will change to blue when a normal sync is required,
-and red when a full sync is required.
+Το κουμπί συγχρονισμού αλλάζει σε μπλε όταν απαιτείται ένας κανονικός συγχρονισμός, ενώ σε κόκκινο
+όταν απαιτείται ένας ολόκληρος συγχρονισμός.
 
-## Media
+## Πολυμέσα
 
-Related video: <https://www.youtube.com/watch?v=phP9GGG-PxY>
+Σχετικά video: <https://www.youtube.com/watch?v=phP9GGG-PxY>
 
-Anki will synchronize any sounds and images used by your notes. It will
+Το Anki συγχρονίζει ήχους και εικόνες που χρησιμοποιούν οι σημειώσεις σας. It will
 notice when media has been added or removed from your [media folder](files.md#file-locations), but
 will not notice if you have edited some existing files without adding or
 removing any. To get your edits noticed, you need to add or remove a
@@ -69,16 +67,16 @@ filesystem.
 
 ## Conflicts
 
-Related video: <https://www.youtube.com/watch?v=UEAcpfMQnjo>
+Σχετικά video: <https://www.youtube.com/watch?v=UEAcpfMQnjo>
 
-Under normal circumstances, reviews and note edits can be merged, so if
+Κάτω υπό φυσιολογικές συνθήκες, οι επαναλήψεις και οι τροποποιήσεις των καρτών μπορούν να συγχωνευτούν, so if
 you review or edit on two different devices before syncing, Anki will
 preserve your changes from both locations. If the same card has been
 reviewed in two different locations, both reviews will be marked in the
 revision history, and the card will be kept in the state it was when it
 was most recently answered.
 
-There are certain changes that Anki is unable to merge. These mainly
+Υπάρχουν μερικές αλλαγές τις οποίες το Anki δεν μπορεί να συγχωνεύσει. These mainly
 relate to the format of notes: things like adding a new field, or
 removing a card template. When you perform an operation that can’t be
 merged, Anki will warn you, and give you the option of aborting the
