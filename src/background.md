@@ -1,22 +1,17 @@
-# Background
+# Υπόβαθρο
 
 <!-- toc -->
 
-Anki is a program which makes remembering things easy. Because it is a
-lot more efficient than traditional study methods, you can either
-greatly decrease your time spent studying, or greatly increase the
-amount you learn.
+Το Anki είναι ένα πρόγραμμα που κάνει εύκολη την απομνημόνευση πραγμάτων. Επειδή είναι πολύ πιο αποτελεσματικό από τις παραδοσιακές μεθόδους εκμάθησης, μπορεί να μειώσει δραστικά το χρόνο μελέτης ή να αυξήσει τις πληροφορίες που μαθαίνετε.
 
-Anyone who needs to remember things in their daily life can benefit from
-Anki. Since it is content-agnostic and supports images, audio, videos
-and scientific markup (via LaTeX), the possibilities are endless. For
-example:
 
-- learning a language
+Όποιος χρειάζεται να απομνημονεύει πράγματα στην καθημερινή του ζωή, μπορεί να επωφεληθεί από το Anki. Οι δυνατότητές του είναι ατελείωτες καθώς υποστηρίζει εικόνες, ήχο, βίντεο και επιστημονική σήμανση (μέσω LaTeX). Για παράδειγμα:
 
-- studying for medical and law exams
+- εκμάθηση μιας γλώσσας
 
-- memorizing people’s names and faces
+- μελέτη για εξετάσεις ιατρικής ή νομικής
+
+- απομνημόνευση ονομάτων ή προσώπων ατόμων
 
 - brushing up on geography
 
@@ -140,3 +135,4 @@ mobile devices. And it is considerably easier to use than SuperMemo.
 
 Anki's spaced repetition system is based on an older version of the
 SuperMemo algorithm called [SM-2](https://faqs.ankiweb.net/what-spaced-repetition-algorithm).
+
