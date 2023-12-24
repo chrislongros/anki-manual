@@ -1,34 +1,30 @@
-# Preferences
+# Πριτιμήσεις
 
 <!-- toc -->
 
-The preferences are available from the Tools menu on Windows/Linux, or
-the Anki menu on a Mac.
+Οι προτιμήσεις είναι διαθέσιμες από το μενού Εργαλείων σε Windows/Linux ή
+από το μενού Anki σε Mac.
 
-## Appearance
+## Εμφάνιση
 
-### General
+### Γενικά
 
-**Language**\
-Change your display language. You can help to improve translations [here](https://translating.ankiweb.net/)
+**Γλώσσα**\
+Αλλάξτε την γλώσσα της οθόνης. Μπορείτε επίσης να βοηθήσετε στην βελτίωση των μεταφράσεων [εδώ](https://translating.ankiweb.net/)
 
-### User Interface
+### Διεπαφή χρήστη
 
-**Theme**\
-Dark (night) mode will make Anki's interface dark, and will cause cards to be shown as white text on a
-black background. Some card templates may need to be modified to work
-properly with this option enabled - please see [night mode styling](templates/styling.md#night-mode) for more information.
+**Θέμα**\
+Η νυχτερινή λειτουργία θα κάνει την διεπαφή του Anki σκουρόχρωμη, με τις κάρτες να φαίνονται ως άσπρο κείμενο σε ένα μαύρο φόντο. Μερικά πρότυπα καρτών πρέπει να τροποποιηθούν για να δουλέψουν σωστά με αυτή την επιλογή ενεργοποιημένη - παρακαλώ δείτε [night mode styling](templates/styling.md#night-mode) για περισσότερες πληροφορίες.
+Από την έκδοση 2.1.50+ υπάρχει μία επιλογή για αλλαγή από λειτουργία μέρας σε λειτουργία νύχτας αυτόματα.
 
-From 2.1.50+ there is an option to switch to day or night mode automatically.
+**Μέγεθος διεπαφής χρήστη**\
+Αν βρίσκετε τα στοιχεία της διεπαφής πολύ μικρά για εσάς, μπορείτε να δοκιμάσετε την αύξηση του μεγέθους με αυτή την ρύθμιση.
 
-**User interface size**\
-If you find that the interface elements are too small for you, you can
-try to increase this setting.
+**Επαναφορά μεγέθους παραθύρων**\
+Αυτό θα επαναφέρει τα μεγέθη όλων των παραθύρων και τις τοποθεσίες στις προεπιλεγμένες ρυθμίσεις.
 
-**Reset Windows Sizes**\
-This will reset all windows sizes and locations to the default settings.
-
-**Video driver**\
+**Οδηγός βίντεο**\
 Anki's libraries need a video driver to draw content on the screen.
 Due to different hardware and software configurations, the driver that
 works best on your machine may vary. ANGLE and OpenGL will perform better
@@ -46,9 +42,9 @@ These options allow you to remove some unnecessary elements from the screen duri
 - Reduce motion, to disable some transitions/animations.
 - Switching between native styling and the Anki theme (only on Mac/Linux).
 
-## Review
+## Επανάληψη
 
-### Scheduler
+### Προγραμματισμός
 
 **v3 Scheduler**\
 Using the Anki v3 scheduler is recommended if you don't use AnkiDroid. It's documented here:\
@@ -130,7 +126,7 @@ note type (and opens the add window to the last-used note type when you choose
 Add). This may be more convenient if you always use a single note type for each
 deck.
 
-### Browsing
+### Περιήγηση
 
 **Default search text**\
 Allows you to customize the starting search text in the browser (eg, to start
@@ -139,7 +135,7 @@ with "deck:current").
 **Ignore accents in search (slower)**\
 When enabled, simple text searches automatically [ignore accents](./searching.md#ignoring-accentscombining-characters).
 
-### Import/Export
+### Εισαγωγή/Εξαγωγή
 
 **Legacy import/export handling**\
 If enabled, legacy (pre 2.1.55) import / export code will be used. It is recommended to deactivate this option.
@@ -148,15 +144,15 @@ If enabled, legacy (pre 2.1.55) import / export code will be used. It is recomme
 
 This tab contains options related to syncing with AnkiWeb.
 
-### Synchronisation
+### Συγχρονισμός
 
 **Synchronize audio and images too**\
 When enabled, media will also be synced with AnkiWeb.
 
-**Automatically sync on profile open/close**\
+**Αυτόματος συγχρονισμός προφίλ κατά το άνοιγμα/κλείσιμο**\
 Disable this if you don't want an automatic sync with AnkiWeb when opening / closing a [profile](./profiles.md).
 
-**Periodically sync media**
+**Περιοδικός συγχρονισμός πολυμέσων**
 
 **On next sync, force changes on one direction**\
 When this option is enabled, the next sync will
@@ -164,16 +160,16 @@ ask you whether you wish to upload or download. This is useful if
 you have made some changes accidentally, and wish to overwrite them
 with an older version that is on AnkiWeb.
 
-### AnkiWeb Account
+### Λογαριασμός AnkiWeb
 
-When logged in, clicking on Log Out will log you out.
+Όταν είστε συνδεδεμένοι, πατήστε στην αποσύνδεση.
 
 ### Self-hosted Sync Server
 
 For info on the custom sync server option, see [this section](./sync-server.md).
 
-## Backups
+## Αντίγραφα ασφαλείας
 
-Please see [this](backups.md#automatic-backups) section of the manual.
+Παρακαλώ δείτε [αυτήν](backups.md#automatic-backups) την ενότητα στο εγχειρίδιο.
 
 ---
