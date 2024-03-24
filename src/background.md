@@ -13,126 +13,121 @@
 
 - απομνημόνευση ονομάτων ή προσώπων ατόμων
 
-- brushing up on geography
+- ανανέωση γνώσεων πάνω στην γεωγραφία
 
-- mastering long poems
+- απομνημόνευση μακροσκελών ποιημάτων
 
-- even practising guitar chords!
+- ακόμα και στην εξάσκηση χορδών κιθάρας!
 
-There are two simple concepts behind Anki: **active recall testing** and
-**spaced repetition**. They are not known to most learners, despite having
-been written about in the scientific literature for many years.
-Understanding how they work will make you a more effective learner.
+Υπάρχουν δύο απλές έννοιες πίσω από το Anki: **δοκιμή ενεργού ανάκλησης** και
+**επαναλήψεις ανά διαστήματα**. Δεν είναι γνωστές στους περισσότερους μελετητές, παρά το γεγονός ότι έχουν
+περιγραφεί στην επιστημονική βιβλιογραφία εδώ και πολλά χρόνια.
+Η κατανόηση του τρόπου λειτουργίας τους θα σας κάνει πιο αποτελεσματικούς μελετητές.
 
-## Active Recall Testing
+## Δοκιμή ενεργής ανάκλησης
 
-_Active recall testing_ means being asked a question and trying to
-remember the answer. This is in contrast to _passive study_, where we
-read, watch, or listen to something without pausing to consider if we
-know the answer. Research has shown that active recall testing is far
-more effective at building strong memories than passive study. There are
-two reasons for this:
+_Δοκιμή ενεργητικής ανάκλησης_ σημαίνει να σου τίθεται μια ερώτηση και να προσπαθείς να
+να θυμηθείς την απάντηση. Αυτό έρχεται σε αντίθεση με την _παθητική μελέτη_, όπου
+διαβάζουμε, βλέπουμε ή ακούμε κάτι χωρίς να σταματάμε να σκεφτούμε αν
+γνωρίζουμε την απάντηση. Έρευνες έχουν δείξει ότι η δοκιμασία ενεργητικής ανάκλησης είναι κατά πολύ
+αποτελεσματικότερη στην οικοδόμηση ισχυρής μνήμης από την παθητική μελέτη. Υπάρχουν
+δύο λόγοι για αυτό:
 
-- The act of recalling something _strengthens_ the memory, increasing
-  the chances we’ll be able to remember it again.
+- Η πράξη της ανάκλησης κάτι _ενισχύει_ τη μνήμη, αυξάνοντας
+  τις πιθανότητες να είμαστε σε θέση να το θυμηθούμε ξανά.
 
-- When we're unable to answer a question, it tells us we need to
-  return to the material to review or relearn it.
+- Όταν δεν είμαστε σε θέση να απαντήσουμε σε μια ερώτηση, αυτό μας λέει ότι πρέπει να
+  να επιστρέψουμε στο υλικό για να το ξαναδούμε ή να το ξαναμάθουμε.
 
-You have probably encountered active recall testing in your school years
-without even realizing it. When good teachers give you a series of
-questions to answer after reading an article, or make you take weekly
-progress-check tests, they are not doing it simply to see if you
-understood the material or not. By testing you, they are increasing the
-chances you will be able to remember the material in the future.
+Πιθανόν να έχετε συναντήσει τεστ ενεργητικής ανάκλησης στα σχολικά σας χρόνια
+χωρίς καν να το συνειδητοποιήσετε. Όταν οι καλοί δάσκαλοι σας δίνουν μια σειρά από
+ερωτήσεις για να απαντήσετε μετά την ανάγνωση ενός άρθρου, ή σας βάζουν να κάνετε εβδομαδιαία
+τεστ ελέγχου προόδου, δεν το κάνουν απλά για να δουν αν
+καταλάβατε την ύλη ή όχι. Με το να σας εξετάζουν, αυξάνουν την
+πιθανότητες να είστε σε θέση να θυμάστε την ύλη στο μέλλον.
 
-A good way to integrate active recall testing into your own studies is
-to use _flashcards_. With traditional paper flashcards, you write a
-question on one side of a card, and the answer on the other side. By not
-turning the card over until you've thought about the answer, you can
-learn things more effectively than passive observation allows.
+Ένας καλός τρόπος για να ενσωματώσετε τις δοκιμές ενεργητικής ανάκλησης στις δικές σας σπουδές είναι
+να χρησιμοποιήσετε _flashcards_. Με τις παραδοσιακές χάρτινες κάρτες, γράφετε ένα
+ερώτηση στη μία πλευρά της κάρτας και την απάντηση στην άλλη πλευρά. Με το να μην
+γυρίζετε την κάρτα μέχρι να σκεφτείτε την απάντηση, μπορείτε να
+να μάθεις πράγματα πιο αποτελεσματικά από ό,τι επιτρέπει η παθητική παρατήρηση.
 
 ## Use It or Lose It
 
-Our brains are efficient machines, and they rapidly discard information
-that doesn't seem useful. Chances are that you don't remember what you
-had for dinner on Monday two weeks ago, because this information is not
-usually useful. If you went to a fantastic restaurant that day and spent
-the last two weeks telling people about how great it was, however,
-you're likely to still remember in vivid detail.
+Οι εγκέφαλοί μας είναι αποτελεσματικές μηχανές και απορρίπτουν γρήγορα πληροφορίες
+που δεν φαίνονται χρήσιμες. Οι πιθανότητες είναι ότι δεν θυμάστε τι
+φάγατε για δείπνο τη Δευτέρα πριν από δύο εβδομάδες, επειδή αυτή η πληροφορία δεν είναι
+συνήθως χρήσιμη. Αν πήγατε σε ένα φανταστικό εστιατόριο εκείνη την ημέρα και ξοδέψατε
+τις τελευταίες δύο εβδομάδες λέγοντας στους ανθρώπους για το πόσο υπέροχο ήταν, ωστόσο,
+είναι πιθανό να θυμάστε ακόμα με ζωντανές λεπτομέρειες.
 
-The brain's "use it or lose it" policy applies to everything we learn.
-If you spend an afternoon memorizing some science terms, and then don't
-think about that material for two weeks, you'll probably have forgotten
-most of it. In fact, studies show we forget about 75% of material learnt
-within a 48 hour period. This can seem pretty depressing when you need
-to learn a lot of information!
+Η νοοτροπία του εγκεφάλου "χρησιμοποιήστε το ή χάστε το" ισχύει για ό,τι μαθαίνουμε.
+Αν περάσετε ένα απόγευμα απομνημονεύοντας κάποιους επιστημονικούς όρους και στη συνέχεια δεν
+σκεφτείτε αυτό το υλικό για δύο εβδομάδες, πιθανότατα θα έχετε ξεχάσει
+το μεγαλύτερο μέρος του. Στην πραγματικότητα, μελέτες δείχνουν ότι ξεχνάμε περίπου το 75% της ύλης που μαθαίνουμε
+μέσα σε διάστημα 48 ωρών. Αυτό μπορεί να φαίνεται αρκετά θλιβερό όταν χρειάζεστε
+να μάθετε πολλές πληροφορίες!
 
-The solution is simple, however: _review_. By reviewing newly-learnt
-information, we can greatly reduce forgetting.
+Ωστόσο, η λύση είναι απλή: _επανάληψη_. Με την επανάληψη των νεοαποκτηθέντων
+πληροφοριών, μπορούμε να μειώσουμε σημαντικά τη λήθη.
 
-The only problem is that traditionally, reviewing has not been very practical. If
-you are using paper flashcards, it's easy to flick through all of them
-if you only have 30 of them to review, but as the number grows to 300 or
-3000, it quickly becomes unwieldy.
+Το μόνο πρόβλημα είναι ότι παραδοσιακά, η επανάληψη δεν ήταν πολύ πρακτική. Αν
+χρησιμοποιείτε χάρτινες κάρτες, είναι εύκολο να τις ξεφυλλίζετε όλες,
+αν έχετε μόνο 30 από αυτές για επανάληψη, αλλά καθώς ο αριθμός τους αυξάνεται σε 300 ή
+3000, γίνεται γρήγορα δυσλειτουργικό.
 
-## Spaced Repetition
+## Επανάληψη ανά διαστήματα
 
-The _spacing effect_ was reported by a German psychologist Hermann Ebbinghaus in 1885. He
-observed that we tend to remember things more effectively, if we spread
-reviews out over time, instead of studying multiple times in one
-session. Since the 1930s, there have been a number of proposals for
-utilizing the spacing effect to improve learning, in what has come to be
-called _spaced repetition_.
+Το φαινόμενο _spacing effect_ αναφέρθηκε από έναν Γερμανό ψυχολόγο, τον Hermann Ebbinghaus, το 1885. Αυτός
+παρατήρησε ότι τείνουμε να θυμόμαστε τα πράγματα πιο αποτελεσματικά, αν απλώνουμε
+επαναλήψεις σε βάθος χρόνου, αντί να μελετάμε πολλές φορές σε ένα
+συνεδρία. Από τη δεκαετία του 1930, υπήρξαν διάφορες προτάσεις για την
+αξιοποίηση του φαινομένου των διαστημάτων για τη βελτίωση της μάθησης, σε αυτό που έχει καθιερωθεί ως
+αποκαλούμενη _επανάληψη ανά διαστήματα_.
 
-One example was in 1972, when a German scientist called Sebastian Leitner
-popularized a method of spaced repetition with paper flashcards. By
-separating the paper cards into a series of boxes, and moving the
-cards to a different box on each successful or unsuccessful review, it
-was possible to see at a glance a rough estimate of how well a card was
-known and when it should be reviewed again. This was a great improvement
-over a single box of cards, and it has been widely adopted by
-computerized flashcard software. It is a rather rough approach however,
-as it cannot give you an exact date on which you should review something
-again, and it does not cope very well with material of varying
-difficulty.
+Ένα παράδειγμα ήταν το 1972, όταν ένας Γερμανός επιστήμονας ονόματι Sebastian Leitner
+διαφήμισε μια μέθοδο επανάληψης ανά διαστήματα με χάρτινες κάρτες flashcards. Με τον
+διαχωρισμό των χάρτινων καρτών σε μια σειρά από κουτιά, και μετακινώντας τις
+κάρτες σε διαφορετικό κουτί σε κάθε επιτυχή ή ανεπιτυχή επανάληψη, ήταν δυνατό να δει κανείς με μια ματιά μια χονδρική εκτίμηση του πόσο καλά μια κάρτα ήταν γνωστή και πότε θα έπρεπε να επανεξεταστεί ξανά. Αυτό ήταν μια μεγάλη βελτίωση
+σε σχέση με ένα ενιαίο κουτί με κάρτες, και υιοθετήθηκε ευρέως από
+λογισμικό ηλεκτρονικών καρτών. Ωστόσο, πρόκειται για μια μάλλον πρόχειρη προσέγγιση,
+καθώς δεν μπορεί να σας δώσει μια ακριβή ημερομηνία κατά την οποία θα πρέπει να επαναλάβετε κάτι
+ξανά, και δεν αντιμετωπίζει πολύ καλά το υλικό που ποικίλλει.
+δυσκολίας.
 
-The biggest developments in the last 30 years have come from the authors
-of SuperMemo, a commercial flashcard program that implements spaced
-repetition. SuperMemo pioneered the concept of a system that keeps track
-of the ideal time to review material and optimizes itself based on the
-performance of the user.
+Οι μεγαλύτερες εξελίξεις τα τελευταία 30 χρόνια προήλθαν από τους συγγραφείς
+του SuperMemo, ενός εμπορικού προγράμματος καρτών μνήμης που εφαρμόζει την επανάληψη ανά διαστήματα.
+Το SuperMemo ήταν πρωτοπόρο στην ιδέα ενός συστήματος που παρακολουθεί
+τον ιδανικό χρόνο επανάληψης του υλικού και βελτιστοποιείται με βάση την
+απόδοση του χρήστη.
 
-In SuperMemo's spaced repetition system, every time you answer a
-question, you tell the program how well you were able to remember it —
-whether you forgot completely, made a small mistake, remembered with
-trouble, remembered easily, etc. The program uses this feedback to
-decide the optimal time to show you the question again. Since a memory
-gets stronger each time you successfully recall it, the time between
-reviews gets bigger and bigger — so you may see a question for the first
-time, then 3 days later, 15 days later, 45 days later, and so on.
+Στο σύστημα spaced retition του SuperMemo, κάθε φορά που απαντάτε σε μια
+ερώτηση, λέτε στο πρόγραμμα πόσο καλά μπορέσατε να τη θυμηθείτε -
+αν την ξεχάσατε τελείως, αν κάνατε ένα μικρό λάθος, αν το θυμηθήκατε με
+δυσκολία ή εύκολα, κ.λπ. Το πρόγραμμα χρησιμοποιεί αυτό το feedback για να
+να αποφασίσει τη βέλτιστη στιγμή για να σας δείξει ξανά την ερώτηση. Δεδομένου ότι η μνήμη
+ενισχύεται κάθε φορά που την ανακαλείτε με επιτυχία, ο χρόνος μεταξύ των
+επαναλήψεων γίνεται όλο και μεγαλύτερος - έτσι μπορεί να δείτε μια ερώτηση για πρώτη φορά
+φορά, και στη συνέχεια 3 ημέρες αργότερα, 15 ημέρες αργότερα, 45 ημέρες αργότερα κ.ο.κ.
 
-This was a revolution in learning, as it meant material could be learnt
-and retained with the absolute minimum amount of effort necessary.
-SuperMemo's slogan sums it up: with spaced repetition, you can: "forget
-about forgetting".
+Αυτό ήταν μια επανάσταση στη μάθηση, καθώς σήμαινε ότι το υλικό μπορούσε να μαθευτεί
+και να συγκρατηθεί με την απολύτως ελάχιστη δυνατή προσπάθεια.
+Το σλόγκαν του SuperMemo το συνοψίζει: με την κατά διαστήματα επανάληψη, μπορείτε να: "ξεχάσετε
+τη λήθη".
 
-## Why Anki?
+## Γιατί το Anki;
 
-While there is no denying the huge impact SuperMemo has had on the
-field, it is not without its problems. The program is often criticized
-for being buggy and difficult to navigate. It only runs on Windows
-computers. It is proprietary software, meaning that end-users cannot extend it
-or access the raw data. And while very old versions have been made available
-for free, they are quite limited for modern use.
+Αν και δεν μπορεί να αμφισβητηθεί ο τεράστιος αντίκτυπος που είχε το SuperMemo στον
+τομέα, δεν είναι χωρίς τα προβλήματά του. Το πρόγραμμα συχνά επικρίνεται
+για το γεγονός ότι είναι προβληματικό και δύσκολο στην πλοήγηση. Τρέχει μόνο σε Windows
+υπολογιστές. Είναι ιδιόκτητο λογισμικό, πράγμα που σημαίνει ότι οι τελικοί χρήστες δεν μπορούν να το επεκτείνουν
+ή να έχουν πρόσβαση στα ακατέργαστα δεδομένα. Και ενώ έχουν διατεθεί πολύ παλιές εκδόσεις
+δωρεάν, είναι αρκετά περιορισμένες για σύγχρονη χρήση.
 
-Anki addresses these issues. There are free clients for Anki available
-on many platforms, so struggling students and teachers with budgetary
-constraints are not left out. Anki is open source, with an already
-flourishing library of add-ons contributed by end-users. It is
-multi-platform, running on Windows, macOS, Linux/FreeBSD, and some
-mobile devices. And it is considerably easier to use than SuperMemo.
+Το Anki αντιμετωπίζει αυτά τα ζητήματα. Το Anki είναι λογισμικό ανοικτού κώδικα, με μια βιβλιοθήκη πρόσθετων λειτουργιών που συνεισφέρουν οι τελικοί χρήστες. Υποστηρίζεται από πολλαπλές πλατφόρμες, τρέχει σε Windows, macOS, Linux/FreeBSD και σε 
+κινητές συσκευές. Είναι σημαντικά ευκολότερο στη χρήση από το SuperMemo.
 
-Anki's spaced repetition system is based on an older version of the
-SuperMemo algorithm called [SM-2](https://faqs.ankiweb.net/what-spaced-repetition-algorithm).
+Το σύστημα spaced repetition του Anki βασίζεται σε μια παλαιότερη έκδοση του
+αλγορίθμου SuperMemo που ονομάζεται [SM-2] (https://faqs.ankiweb.net/what-spaced-repetition-algorithm).
+
 
