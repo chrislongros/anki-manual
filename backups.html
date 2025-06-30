@@ -1,17 +1,16 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
+<html lang="en" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Αντίγραφα ασφαλείας - Anki Manual</title>
+        <title>Backups - Anki Manual</title>
 
 
         <!-- Custom HTML head -->
-        
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="">
+
+        <meta name="description" content="Anki&#x27;s user manual. Anki is a flashcard program that makes learning easier.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff">
 
         <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
@@ -25,26 +24,44 @@
         <link rel="stylesheet" href="fonts/fonts.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="css/kbd.css">
+        <link rel="stylesheet" href="css/misc.css">
+        <link rel="stylesheet" href="css/mdbook-admonish.css">
 
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
     </head>
     <body>
-        <!-- Provide site root to javascript -->
-        <script type="text/javascript">
-            var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
-        </script>
-
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
+        <script>
             try {
-                var theme = localStorage.getItem('mdbook-theme');
-                var sidebar = localStorage.getItem('mdbook-sidebar');
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
 
                 if (theme.startsWith('"') && theme.endsWith('"')) {
                     localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
@@ -57,56 +74,66 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
-            var theme;
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
-            var html = document.querySelector('html');
-            html.classList.remove('no-js')
+            const html = document.documentElement;
             html.classList.remove('light')
             html.classList.add(theme);
-            html.classList.add('js');
+            html.classList.add("js");
         </script>
 
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
-            var html = document.querySelector('html');
-            var sidebar = 'hidden';
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
+            sidebar_toggle.checked = sidebar === 'visible';
             html.classList.remove('sidebar-visible');
             html.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item affix "><a href="intro.html">Εισαγωγή</a></li><li class="chapter-item "><a href="background.html"><strong aria-hidden="true">1.</strong> Υπόβαθρο</a></li><li class="chapter-item "><a href="platform/intro.html"><strong aria-hidden="true">2.</strong> Σημειώσεις πλατφόρμας</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="platform/windows/installing.html"><strong aria-hidden="true">2.1.</strong> Windows</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="platform/windows/installing.html"><strong aria-hidden="true">2.1.1.</strong> Εγκατάσταση & Αναβάθμιση</a></li><li class="chapter-item "><a href="platform/windows/installation-issues.html"><strong aria-hidden="true">2.1.2.</strong> Προβλήματα εγκατάστασης</a></li><li class="chapter-item "><a href="platform/windows/startup-issues.html"><strong aria-hidden="true">2.1.3.</strong> Προβλήματα εκκίνησης</a></li><li class="chapter-item "><a href="platform/windows/display-issues.html"><strong aria-hidden="true">2.1.4.</strong> Προβλήματα οθόνης</a></li><li class="chapter-item "><a href="platform/windows/copy-and-paste.html"><strong aria-hidden="true">2.1.5.</strong> Προβλήματα αντιγραφής και επικόλλησης</a></li><li class="chapter-item "><a href="platform/windows/text-size.html"><strong aria-hidden="true">2.1.6.</strong> Μέγεθος κειμένου</a></li><li class="chapter-item "><a href="platform/windows/permission-problems.html"><strong aria-hidden="true">2.1.7.</strong> Προβλήματα άδειας</a></li></ol></li><li class="chapter-item "><a href="platform/mac/installing.html"><strong aria-hidden="true">2.2.</strong> macOS</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="platform/mac/installing.html"><strong aria-hidden="true">2.2.1.</strong> Εγκατάσταση & Αναβάθμιση</a></li><li class="chapter-item "><a href="platform/mac/display-issues.html"><strong aria-hidden="true">2.2.2.</strong> Προβλήματα οθόνης</a></li></ol></li><li class="chapter-item "><a href="platform/linux/installing.html"><strong aria-hidden="true">2.3.</strong> Linux</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="platform/linux/installing.html"><strong aria-hidden="true">2.3.1.</strong> Εγκατάσταση & Αναβάθμιση</a></li><li class="chapter-item "><a href="platform/linux/missing-libraries.html"><strong aria-hidden="true">2.3.2.</strong> Missing Libraries</a></li><li class="chapter-item "><a href="platform/linux/display-issues.html"><strong aria-hidden="true">2.3.3.</strong> Προβλήματα οθόνης</a></li><li class="chapter-item "><a href="platform/linux/blank-window.html"><strong aria-hidden="true">2.3.4.</strong> Μαύρο κύριο παράθυρο</a></li><li class="chapter-item "><a href="platform/linux/distro-packages.html"><strong aria-hidden="true">2.3.5.</strong> Πακέτα διανομής Linux</a></li><li class="chapter-item "><a href="platform/linux/gtk-theme.html"><strong aria-hidden="true">2.3.6.</strong> Λάθος θέμα GTK</a></li><li class="chapter-item "><a href="platform/linux/wayland.html"><strong aria-hidden="true">2.3.7.</strong> Wayland</a></li><li class="chapter-item "><a href="platform/linux/input-methods.html"><strong aria-hidden="true">2.3.8.</strong> Μέθοδοι καταχώρησης</a></li></ol></li></ol></li><li class="chapter-item "><a href="getting-started.html"><strong aria-hidden="true">3.</strong> Getting Started</a></li><li class="chapter-item "><a href="studying.html"><strong aria-hidden="true">4.</strong> Μελέτη</a></li><li class="chapter-item "><a href="editing.html"><strong aria-hidden="true">5.</strong> Προσθήκη/Επεξεργασία</a></li><li class="chapter-item "><a href="templates/intro.html"><strong aria-hidden="true">6.</strong> Πρότυπα καρτών</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="templates/fields.html"><strong aria-hidden="true">6.1.</strong> Αντικαταστάσεις πεδίου</a></li><li class="chapter-item "><a href="templates/generation.html"><strong aria-hidden="true">6.2.</strong> Δημιουργία καρτών</a></li><li class="chapter-item "><a href="templates/styling.html"><strong aria-hidden="true">6.3.</strong> Στυλ & HTML</a></li><li class="chapter-item "><a href="templates/errors.html"><strong aria-hidden="true">6.4.</strong> Έλεγχοι και Σφάλματα</a></li></ol></li><li class="chapter-item "><a href="preferences.html"><strong aria-hidden="true">7.</strong> Προτιμήσεις</a></li><li class="chapter-item "><a href="deck-options.html"><strong aria-hidden="true">8.</strong> Επιλογές τράπουλας</a></li><li class="chapter-item "><a href="syncing.html"><strong aria-hidden="true">9.</strong> Συγχρονισμός με το AnkiWeb</a></li><li class="chapter-item "><a href="profiles.html"><strong aria-hidden="true">10.</strong> Προφίλ</a></li><li class="chapter-item "><a href="browsing.html"><strong aria-hidden="true">11.</strong> Περιήγηση</a></li><li class="chapter-item "><a href="filtered-decks.html"><strong aria-hidden="true">12.</strong> Φιλτραρισμένες τράπουλες</a></li><li class="chapter-item "><a href="searching.html"><strong aria-hidden="true">13.</strong> Αναζήτηση</a></li><li class="chapter-item "><a href="importing/intro.html"><strong aria-hidden="true">14.</strong> Εισαγωγή</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="importing/text-files.html"><strong aria-hidden="true">14.1.</strong> Αρχεία κειμένου</a></li><li class="chapter-item "><a href="importing/packaged-decks.html"><strong aria-hidden="true">14.2.</strong> Πακεταρισμένες τράπουλες</a></li></ol></li><li class="chapter-item "><a href="exporting.html"><strong aria-hidden="true">15.</strong> Εξαγωγή</a></li><li class="chapter-item expanded "><a href="backups.html" class="active"><strong aria-hidden="true">16.</strong> Αντίγραφα ασφαλείας</a></li><li class="chapter-item "><a href="files.html"><strong aria-hidden="true">17.</strong> Διαχείριση αρχείων</a></li><li class="chapter-item "><a href="stats.html"><strong aria-hidden="true">18.</strong> Στατιστικά</a></li><li class="chapter-item "><a href="media.html"><strong aria-hidden="true">19.</strong> Πολυμέσα</a></li><li class="chapter-item "><a href="math.html"><strong aria-hidden="true">20.</strong> Μαθηματικά & Σύμβολα</a></li><li class="chapter-item "><a href="leeches.html"><strong aria-hidden="true">21.</strong> Leeches</a></li><li class="chapter-item "><a href="addons.html"><strong aria-hidden="true">22.</strong> Πρόσθετα</a></li><li class="chapter-item "><a href="sync-server.html"><strong aria-hidden="true">23.</strong> Εξυπηρετητής συγχρονισμού</a></li><li class="chapter-item "><a href="misc.html"><strong aria-hidden="true">24.</strong> Διάφορα</a></li><li class="chapter-item affix "><a href="contrib.html">Συνεισφέροντας</a></li><li class="chapter-item affix "><a href="faqs.html">Συχνές ερωτήσεις</a></li><li class="chapter-item affix "><a href="resources.html">Πηγές</a></li></ol>
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky bordered">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
-                        </button>
+                        </label>
                         <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
                     </div>
@@ -136,7 +163,7 @@
                 </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
+                <script>
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
@@ -146,78 +173,91 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="Αντίγραφα-ασφαλείας"><a class="header" href="#Αντίγραφα-ασφαλείας">Αντίγραφα ασφαλείας</a></h1>
+                        <h1 id="backups"><a class="header" href="#backups">Backups</a></h1>
 <ul>
-<li><a href="#%CE%91%CF%85%CF%84%CF%8C%CE%BC%CE%B1%CF%84%CE%B1-%CE%B1%CE%BD%CF%84%CE%AF%CE%B3%CF%81%CE%B1%CF%86%CE%B1-%CE%B1%CF%83%CF%86%CE%B1%CE%BB%CE%B5%CE%AF%CE%B1%CF%82">Αυτόματα αντίγραφα ασφαλείας</a>
+<li><a href="#automatic-backups">Automatic backups</a>
 <ul>
-<li><a href="#%CE%91%CF%80%CE%BF%CE%BA%CE%B1%CF%84%CE%AC%CF%83%CF%84%CE%B1%CF%83%CE%B7">Αποκατάσταση</a></li>
-<li><a href="#anki-2150">Anki 2.1.50+</a></li>
-<li><a href="#%CE%A0%CE%B1%CE%BB%CE%B1%CE%B9%CF%8C%CF%84%CE%B5%CF%81%CE%B5%CF%82-%CE%B5%CE%BA%CE%B4%CF%8C%CF%83%CE%B5%CE%B9%CF%82-anki">Παλαιότερες εκδόσεις Anki</a></li>
+<li><a href="#restoring">Restoring</a></li>
+<li><a href="#creating">Creating</a></li>
 </ul>
 </li>
-<li><a href="#%CE%A7%CE%B5%CE%B9%CF%81%CE%BF%CE%BA%CE%AF%CE%BD%CE%B7%CF%84%CE%B1-%CE%B1%CE%BD%CF%84%CE%AF%CE%B3%CF%81%CE%B1%CF%86%CE%B1-colpkg">Χειροκίνητα αντίγραφα colpkg</a>
+<li><a href="#manual-colpkg-backups">Manual colpkg backups</a>
 <ul>
-<li><a href="#%CE%95%CF%80%CE%B1%CE%BD%CE%B1%CF%86%CE%BF%CF%81%CE%AC">Επαναφορά</a></li>
-<li><a href="#%CE%94%CE%B7%CE%BC%CE%B9%CE%BF%CF%85%CF%81%CE%B3%CE%AF%CE%B1">Δημιουργία</a></li>
+<li><a href="#restoring-1">Restoring</a></li>
+<li><a href="#creating-1">Creating</a></li>
 </ul>
 </li>
 <li><a href="#ankiweb">AnkiWeb</a></li>
-<li><a href="#%CE%91%CF%81%CF%87%CE%B5%CE%AF%CE%BF-%CE%BA%CE%B1%CF%84%CE%B1%CE%B3%CF%81%CE%B1%CF%86%CE%AE%CF%82-%CE%B4%CE%B9%CE%B1%CE%B3%CF%81%CE%B1%CF%86%CF%8E%CE%BD">Αρχείο καταγραφής διαγραφών</a></li>
+<li><a href="#deletion-log">Deletion log</a></li>
 </ul>
-<h2 id="Αυτόματα-αντίγραφα-ασφαλείας"><a class="header" href="#Αυτόματα-αντίγραφα-ασφαλείας">Αυτόματα αντίγραφα ασφαλείας</a></h2>
-<p>Το Anki δημιουργεί αυτόματα αντίγραφα ασφαλείας των δεδομένων των καρτών σας. Αυτά περιλαμβάνουν το κείμενο
-των καρτών και τις πληροφορίες προγραμματισμού, αλλά όχι αρχεία ήχου ή εικόνας.</p>
-<p>Τα αυτόματα backups μπορεί να είναι χρήσιμα στην αποκατάσταση από λάθη, αλλά δεν πρέπει
-να βασίζεστε αποκλειστικά σε αυτά. Επειδή αποθηκεύονται στην τοπική σας συσκευή, δεν σας προστατεύουν
-σε περίπτωση που η συσκευή χαλάσει ή κλαπεί. Προτείνουμε να τα συνδυάσετε με
+<h2 id="automatic-backups"><a class="header" href="#automatic-backups">Automatic backups</a></h2>
+<p>Anki will create automatic backups of your card data. These include the text
+on your cards and your scheduling information, but do not include sounds or
+image files.</p>
+<p>Automatic backups can be useful to recover from mistakes, but you should not
+rely solely on them. Because they are stored on your local device, they will not
+protect you if your device breaks or is stolen. We recommend you combine them with
 <a href="#manual-colpkg-backups">manual backups</a>.</p>
-<h3 id="Αποκατάσταση"><a class="header" href="#Αποκατάσταση">Αποκατάσταση</a></h3>
-<p>Για να κάνετε επαναφορά από ένα αυτόματο backup:</p>
+<h3 id="restoring"><a class="header" href="#restoring">Restoring</a></h3>
+<p>To restore from an automatic backup:</p>
 <ul>
-<li>Ανοίξτε το Anki και επιλέξτε Αλλαγή προφίλ από το μενού αρχείου.</li>
-<li>Πατήστε το κουμπί &quot;Άνοιγμα αντιγράφου ασφαλείας&quot;.</li>
-<li>Επιλέξτε το backup το οποίο επιθυμείτε να επαναφέρετε.</li>
+<li>Open Anki, and choose Switch Profile from the File menu.</li>
+<li>Click on the “Open Backup” button.</li>
+<li>Select the backup you wish to restore from.</li>
 </ul>
-<p>Όταν κάνετε επαναφορά από ένα backup, οποιεσδήποτε αλλαγές κάνατε από τη στιγμή που αυτό δημιουργήθηκε θα χαθούν.</p>
-<p>Το Anki απενεργοποιεί τον αυτόματο συγχρονισμό και τα αντίγραφα όταν κάνετε επαναφορά από ένα αντίγραφο ασφαλείας.
-Όταν είστε ικανοποιημένοι ότι αποκαταστήσατε τη συλλογή σας με το σωστό αντίγραφο, κλείστε και επανεκκινήστε το Anki.</p>
-<h3 id="anki-2150"><a class="header" href="#anki-2150">Anki 2.1.50+</a></h3>
-<p>Τα αντίγραφα δημιουργούνται περιοδικά. Μπορείτε να ρυθμίσετε τον χρόνο μεταξύ τους στην οθόνη
-<a href="preferences.html">προτιμήσεων</a>. Η προεπιλογή είναι 30 λεπτά.</p>
-<p>Μερικές ενέργειες προκαλούν τη δημιουργία αντιγράφου, ακόμα και αν δεν έχει επέλθει ο ρυθμισμένος χρόνος:</p>
+<div id="admonition-warning" class="admonition admonish-warning" role="note" aria-labelledby="admonition-warning-title">
+<div class="admonition-title">
+<div id="admonition-warning-title">
+<p>Warning</p>
+</div>
+<a class="admonition-anchor-link" href="#admonition-warning"></a>
+</div>
+<div>
+<p>When restoring from a backup, any changes made since the backup was created will be lost.</p>
+</div>
+</div>
+<p>Anki disables automatic syncing and backups when you restore from a backup. Once you’re
+happy that you’ve restored the correct backup, close and re-open Anki to return to normal.</p>
+<h3 id="creating"><a class="header" href="#creating">Creating</a></h3>
+<p>Backups are created periodically. You can configure the time between backups
+in the <a href="preferences.html">preferences</a> screen. The default is 30 minutes.</p>
+<p>Certain operations will trigger a backup, even if the configured time has not
+elapsed yet:</p>
 <ul>
-<li>Συγχρονισμός προς μια κατεύθυνση</li>
-<li>Εισαγωγή ενός αρχείου .colpkg κάνοντας χρήση Αρχείο&gt;Εισαγωγή</li>
-<li>Εργαλεία&gt;Έλεγχος βάσης δεδομένων</li>
+<li>A one-way sync download</li>
+<li>Importing a .colpkg file using File&gt;Import</li>
+<li>Tools&gt;Check Database</li>
 </ul>
-<p>Όταν τα αντίγραφα είναι παλαιότερα των δύο ημερών, το Anki θα αρχίσει να αφαιρεί μερικά από τα παλαιότερα.
-Μπορείτε να ελέγξετε πόσα ημερήσια, εβδομαδιαία και μηνιαία backups θέλετε να κρατήσετε.</p>
-<p>Τα αντίγραφα που δημιουργήθηκαν με την έκδοση 2.1.50 δεν μπορούν να εισαχθούν σε παλαιότερες εκδόσεις Anki.</p>
-<h3 id="Παλαιότερες-εκδόσεις-anki"><a class="header" href="#Παλαιότερες-εκδόσεις-anki">Παλαιότερες εκδόσεις Anki</a></h3>
-<p>Κάθε φορά που κλείνει η συλλογή σας (όταν κλείνει το Anki, γίνεται αλλαγή προφίλ ή
-με ένα full sync download), το Anki κάνει ένα backup. Ως προεπιλογή κρατάει έως και 30 αντίγραφα, αλλά αυτό μπορεί να προσαρμοστεί στις <a href="preferences.html">προτιμήσεις</a>.</p>
-<h2 id="Χειροκίνητα-αντίγραφα-colpkg"><a class="header" href="#Χειροκίνητα-αντίγραφα-colpkg">Χειροκίνητα αντίγραφα colpkg</a></h2>
-<h3 id="Επαναφορά"><a class="header" href="#Επαναφορά">Επαναφορά</a></h3>
-<p>Μπορείτε να επαναφέρετε ένα χειροκίνητο backup χρησιμοποιώντας την λειτουργία Αρχείο&gt;Εισαγωγή.</p>
-<h3 id="Δημιουργία"><a class="header" href="#Δημιουργία">Δημιουργία</a></h3>
-<p>Στο Anki 2.1.50+, μπορείτε να χρησιμοποιήσετε Αρχείο&gt;Δημιουργία αντιγράφου ασφαλείας για να κάνετε άμεσα ένα αντίγραφο. Αυτό λειτουργεί όπως τα κανονικά αυτόματα backups, αλλά δεν περιλαμβάνει αρχεία πολυμέσων.</p>
-<p>Για να δημιουργήσετε ένα αντίγραφο που συμπεριλαμβάνει τους ήχους και τις εικόνες σας:</p>
+<p>After backups are two days old, Anki will start removing some of the older ones.
+You can control how many daily, weekly and monthly backups you’d like to keep.</p>
+<p>Backups created with 2.1.50 will not be importable into older Anki versions.</p>
+<h2 id="manual-colpkg-backups"><a class="header" href="#manual-colpkg-backups">Manual colpkg backups</a></h2>
+<h3 id="restoring-1"><a class="header" href="#restoring-1">Restoring</a></h3>
+<p>You can restore from a manual backup by using File&gt;Import.</p>
+<h3 id="creating-1"><a class="header" href="#creating-1">Creating</a></h3>
+<p>In Anki 2.1.50+, you can use File&gt;Create Backup to trigger an immediate backup. This
+functions like regular automatic backups, and does not include media files.</p>
+<p>To create a backup that includes your sounds and images:</p>
 <ul>
-<li>Επιλέξτε Εξαγωγή από το μενού αρχείου.</li>
-<li>Βεβαιωθείτε ότι το &quot;Πακέτο συλλογής Anki (.colpkg)&quot; είναι επιλεγμένο.</li>
-<li>Ενεργοποιήστε την επιλογή  &quot;συμπερίληψη πολυμέσων&quot;.</li>
+<li>Select Export from the File menu.</li>
+<li>Ensure “Anki collection package (.colpkg)” is selected.</li>
+<li>Enable the “include media” option.</li>
 </ul>
-<p>Αυτό θα δημιουργήσει ένα αρχείο .colpkg που περιέχει όλες τις κάρτες σας με ήχους/εικόνες που αυτές χρησιμοποιούν. Προτείνουμε να αποθηκεύσετε το αρχείο κάπου ασφαλές όπως σε μια άλλη συσκευή ή σε υπηρεσίες cloud (Dropbox ή Google Drive).</p>
+<p>This will create a .colpkg file that contains all of your cards and any sounds/images they
+use. We recommend you store the file somewhere safe, like a different device, or a cloud-based
+file storage service like Dropbox or Google Drive.</p>
 <h2 id="ankiweb"><a class="header" href="#ankiweb">AnkiWeb</a></h2>
-<p>Ο <a href="./syncing.html">συγχρονισμός</a> της συλλογής σας με το AnkiWeb παρέχει ένα επίπεδο προστασίας
-σε περίπτωση που χαθεί ή κλαπεί η συσκευή σας. Αν πρέπει να αντικαταστήσετε τη συλλογή σας από το AnkiWeb,
-μπορείτε να εξαναγκάσετε συγχρονισμό προς μία κατεύθυνση στην οθόνη των προτιμήσεων ή να κάνετε συγχρονισμό από μία νέα συσκευή και να επιλέξετε &quot;Λήψη&quot;.</p>
-<h2 id="Αρχείο-καταγραφής-διαγραφών"><a class="header" href="#Αρχείο-καταγραφής-διαγραφών">Αρχείο καταγραφής διαγραφών</a></h2>
-<p>Το Anki καταγράφει διεγραμμένες σημειώσεις σε ένα αρχείο κειμένου που ονομάζεται deleted.txt στον
-φάκελο του προφίλ σας. Αυτές οι σημειώσεις είναι σε μορφή κειμένου που μπορεί να διαβαστεί από
-Αρχείο&gt;Εισαγωγή, αλλά λάβετε υπόψη ότι η λειτουργία εισαγωγής υποστηρίζει μόνο έναν
-τύπο σημείωσης κάθε φορά. Έτσι αν έχετε διαγράψει σημειώσεις από διαφορετικούς τύπους
-θα πρέπει να διαχωρίσετε πρώτα το αρχείο σε διαφορετικά αρχεία, το καθένα για κάθε τύπο.</p>
+<p><a href="./syncing.html">Synchronising</a> your collection with AnkiWeb provides some level of protection
+against your device being lost or stolen. If you need to restore your collection from AnkiWeb,
+you can force a one-way sync in the preferences screen, or sync from a new device, and then choose
+“Download”.</p>
+<h2 id="deletion-log"><a class="header" href="#deletion-log">Deletion log</a></h2>
+<p>Anki logs deleted notes to a text file called deleted.txt in your
+profile folder. These notes are in a text format that can be read by
+File&gt;Import, though please note the import feature only supports a
+single note type at one time, so if you have deleted notes from
+different note types, you’ll need to split the file into separate files
+for each note type first.</p>
 
                     </main>
 
@@ -227,7 +267,7 @@
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="files.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="files.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -241,7 +281,7 @@
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="files.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="files.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
@@ -251,21 +291,22 @@
 
 
 
-        <script type="text/javascript">
+        <script>
             window.playground_copyable = true;
         </script>
 
 
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
 
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
 
         <!-- Custom JS scripts -->
 
 
+    </div>
     </body>
 </html>

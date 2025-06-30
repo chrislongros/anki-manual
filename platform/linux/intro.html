@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Install &amp; Upgrade - Anki Manual</title>
+        <title>Linux - Anki Manual</title>
 
 
         <!-- Custom HTML head -->
@@ -173,78 +173,24 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="installing--upgrading-anki-on-linux"><a class="header" href="#installing--upgrading-anki-on-linux">Installing &amp; Upgrading Anki on Linux</a></h1>
+                        <h1 id="linux"><a class="header" href="#linux">Linux</a></h1>
+<h2 id="installing--upgrading-anki-on-linux"><a class="header" href="#installing--upgrading-anki-on-linux">Installing &amp; Upgrading Anki on Linux</a></h2>
+<p>For instructions on how to install or upgrade Anki on Linux, please see:</p>
 <ul>
-<li><a href="#requirements">Requirements</a></li>
-<li><a href="#installing">Installing</a></li>
-<li><a href="#upgrading">Upgrading</a></li>
-<li><a href="#add-on-compatibility">Add-on Compatibility</a></li>
-<li><a href="#problems">Problems</a></li>
+<li><a href="installing.html">Install &amp; Upgrade</a></li>
 </ul>
-<h2 id="requirements"><a class="header" href="#requirements">Requirements</a></h2>
-<p>The packaged version requires a recent 64 bit Intel/AMD Linux with glibc, and common
-libraries like libwayland-client and systemd. If you are on a different
-architecture (e.g ARM/AArch64), or a barebones Linux distro, you will not be able to use the
-packaged version, but you may be able to use the <a href="https://betas.ankiweb.net/#via-pypipip">Python wheels</a>
-instead.</p>
-<p>Debian and derivatives, such as Ubuntu and <a href="https://support.google.com/chromebook/answer/9145439?">Chromebooks with Linux enabled</a>, please use the following before
-installing:</p>
-<pre><code class="language-shell">sudo apt install libxcb-xinerama0 libxcb-cursor0 libnss3
-</code></pre>
-<p>If Anki fails to start after installing, you may be <a href="./missing-libraries.html">missing other libraries</a>.</p>
-<p>If you’re on Ubuntu 24.04 and Anki won’t start, please see <a href="https://forums.ankiweb.net/t/issues-running-on-ubuntu-24-04/40974">this thread</a>.</p>
-<p>Anki’s build system only supports glibc, so musl-based distros are not currently supported.</p>
-<h2 id="installing"><a class="header" href="#installing">Installing</a></h2>
-<p>To install Anki:</p>
-<ol>
-<li>Download Anki from <a href="https://apps.ankiweb.net">https://apps.ankiweb.net</a> to your Downloads folder.</li>
-<li>If zstd is not already installed on your system, you’ll need to install it (e.g <code>sudo apt install zstd</code>).</li>
-<li>Open a terminal and run the following commands, replacing the filename as appropriate.</li>
-</ol>
-<pre><code class="language-shell">tar xaf Downloads/anki-2XXX-linux-qt6.tar.zst
-cd anki-2XXX-linux-qt6
-sudo ./install.sh
-</code></pre>
-<p>On some Linux systems, you may need to use <code>tar xaf --use-compress-program=unzstd</code>.</p>
-<ol start="4">
-<li>You can then start Anki by typing <code>anki</code> and hitting <kbd>Enter</kbd>. If you encounter
-any issues, please see the links on the left.</li>
-</ol>
-<h2 id="upgrading"><a class="header" href="#upgrading">Upgrading</a></h2>
-<p>If you were running Anki from a .deb/.rpm/etc in the past, please make
-sure to remove the system version before installing the package
-provided here.</p>
-<p>If you’re upgrading from a previous package, simply repeat the
-installation steps to upgrade to the latest version. Your user data
-will be preserved.</p>
-<p>If you wish to downgrade to a previous version, please make sure you
-<a href="http://changes.ankiweb.net">downgrade first</a>.</p>
-<h2 id="add-on-compatibility"><a class="header" href="#add-on-compatibility">Add-on Compatibility</a></h2>
-<p>Some add-ons may not always work with the latest Anki release. If you upgrade to
-the latest Anki version and find an add-on you cannot live without stops working,
-you can download older Anki versions from the <a href="https://github.com/ankitects/anki/releases">releases page</a>.</p>
 <h2 id="problems"><a class="header" href="#problems">Problems</a></h2>
-<p>If you encounter any issues when installing or starting Anki, please see the
-following pages:</p>
-<ul>
-<li><a href="missing-libraries.html">Missing Libraries</a></li>
-<li><a href="display-issues.html">Display Issues</a></li>
-<li><a href="blank-window.html">Blank Main Window</a></li>
-<li><a href="distro-packages.html">Linux Distro Packages</a></li>
-<li><a href="gtk-theme.html">Incorrect GTK Theme</a></li>
-<li><a href="wayland.html">Wayland</a></li>
-<li><a href="input-methods.html">Input Methods</a></li>
-</ul>
+<p>If you encounter any issues when installing or starting Anki, please see the subsections in the table of contents.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../../platform/linux/intro.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../platform/mac/display-issues.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../../platform/linux/missing-libraries.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../../platform/linux/installing.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -254,11 +200,11 @@ following pages:</p>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../../platform/linux/intro.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../platform/mac/display-issues.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../../platform/linux/missing-libraries.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../../platform/linux/installing.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

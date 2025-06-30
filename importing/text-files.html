@@ -1,17 +1,16 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
+<html lang="en" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Αρχεία κειμένου - Anki Manual</title>
+        <title>Text Files - Anki Manual</title>
 
 
         <!-- Custom HTML head -->
-        
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="">
+
+        <meta name="description" content="Anki&#x27;s user manual. Anki is a flashcard program that makes learning easier.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff">
 
         <link rel="icon" href="../favicon.svg">
         <link rel="shortcut icon" href="../favicon.png">
@@ -25,26 +24,44 @@
         <link rel="stylesheet" href="../fonts/fonts.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../highlight.css">
-        <link rel="stylesheet" href="../tomorrow-night.css">
-        <link rel="stylesheet" href="../ayu-highlight.css">
+        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="../css/kbd.css">
+        <link rel="stylesheet" href="../css/misc.css">
+        <link rel="stylesheet" href="../css/mdbook-admonish.css">
 
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc.js"></script>
     </head>
     <body>
-        <!-- Provide site root to javascript -->
-        <script type="text/javascript">
-            var path_to_root = "../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
-        </script>
-
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
+        <script>
             try {
-                var theme = localStorage.getItem('mdbook-theme');
-                var sidebar = localStorage.getItem('mdbook-sidebar');
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
 
                 if (theme.startsWith('"') && theme.endsWith('"')) {
                     localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
@@ -57,56 +74,66 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
-            var theme;
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
-            var html = document.querySelector('html');
-            html.classList.remove('no-js')
+            const html = document.documentElement;
             html.classList.remove('light')
             html.classList.add(theme);
-            html.classList.add('js');
+            html.classList.add("js");
         </script>
 
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
-            var html = document.querySelector('html');
-            var sidebar = 'hidden';
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
+            sidebar_toggle.checked = sidebar === 'visible';
             html.classList.remove('sidebar-visible');
             html.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item affix "><a href="../intro.html">Εισαγωγή</a></li><li class="chapter-item "><a href="../background.html"><strong aria-hidden="true">1.</strong> Υπόβαθρο</a></li><li class="chapter-item "><a href="../platform/intro.html"><strong aria-hidden="true">2.</strong> Σημειώσεις πλατφόρμας</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../platform/windows/installing.html"><strong aria-hidden="true">2.1.</strong> Windows</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../platform/windows/installing.html"><strong aria-hidden="true">2.1.1.</strong> Εγκατάσταση & Αναβάθμιση</a></li><li class="chapter-item "><a href="../platform/windows/installation-issues.html"><strong aria-hidden="true">2.1.2.</strong> Προβλήματα εγκατάστασης</a></li><li class="chapter-item "><a href="../platform/windows/startup-issues.html"><strong aria-hidden="true">2.1.3.</strong> Προβλήματα εκκίνησης</a></li><li class="chapter-item "><a href="../platform/windows/display-issues.html"><strong aria-hidden="true">2.1.4.</strong> Προβλήματα οθόνης</a></li><li class="chapter-item "><a href="../platform/windows/copy-and-paste.html"><strong aria-hidden="true">2.1.5.</strong> Προβλήματα αντιγραφής και επικόλλησης</a></li><li class="chapter-item "><a href="../platform/windows/text-size.html"><strong aria-hidden="true">2.1.6.</strong> Μέγεθος κειμένου</a></li><li class="chapter-item "><a href="../platform/windows/permission-problems.html"><strong aria-hidden="true">2.1.7.</strong> Προβλήματα άδειας</a></li></ol></li><li class="chapter-item "><a href="../platform/mac/installing.html"><strong aria-hidden="true">2.2.</strong> macOS</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../platform/mac/installing.html"><strong aria-hidden="true">2.2.1.</strong> Εγκατάσταση & Αναβάθμιση</a></li><li class="chapter-item "><a href="../platform/mac/display-issues.html"><strong aria-hidden="true">2.2.2.</strong> Προβλήματα οθόνης</a></li></ol></li><li class="chapter-item "><a href="../platform/linux/installing.html"><strong aria-hidden="true">2.3.</strong> Linux</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../platform/linux/installing.html"><strong aria-hidden="true">2.3.1.</strong> Εγκατάσταση & Αναβάθμιση</a></li><li class="chapter-item "><a href="../platform/linux/missing-libraries.html"><strong aria-hidden="true">2.3.2.</strong> Missing Libraries</a></li><li class="chapter-item "><a href="../platform/linux/display-issues.html"><strong aria-hidden="true">2.3.3.</strong> Προβλήματα οθόνης</a></li><li class="chapter-item "><a href="../platform/linux/blank-window.html"><strong aria-hidden="true">2.3.4.</strong> Μαύρο κύριο παράθυρο</a></li><li class="chapter-item "><a href="../platform/linux/distro-packages.html"><strong aria-hidden="true">2.3.5.</strong> Πακέτα διανομής Linux</a></li><li class="chapter-item "><a href="../platform/linux/gtk-theme.html"><strong aria-hidden="true">2.3.6.</strong> Λάθος θέμα GTK</a></li><li class="chapter-item "><a href="../platform/linux/wayland.html"><strong aria-hidden="true">2.3.7.</strong> Wayland</a></li><li class="chapter-item "><a href="../platform/linux/input-methods.html"><strong aria-hidden="true">2.3.8.</strong> Μέθοδοι καταχώρησης</a></li></ol></li></ol></li><li class="chapter-item "><a href="../getting-started.html"><strong aria-hidden="true">3.</strong> Getting Started</a></li><li class="chapter-item "><a href="../studying.html"><strong aria-hidden="true">4.</strong> Μελέτη</a></li><li class="chapter-item "><a href="../editing.html"><strong aria-hidden="true">5.</strong> Προσθήκη/Επεξεργασία</a></li><li class="chapter-item "><a href="../templates/intro.html"><strong aria-hidden="true">6.</strong> Πρότυπα καρτών</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../templates/fields.html"><strong aria-hidden="true">6.1.</strong> Αντικαταστάσεις πεδίου</a></li><li class="chapter-item "><a href="../templates/generation.html"><strong aria-hidden="true">6.2.</strong> Δημιουργία καρτών</a></li><li class="chapter-item "><a href="../templates/styling.html"><strong aria-hidden="true">6.3.</strong> Στυλ & HTML</a></li><li class="chapter-item "><a href="../templates/errors.html"><strong aria-hidden="true">6.4.</strong> Έλεγχοι και Σφάλματα</a></li></ol></li><li class="chapter-item "><a href="../preferences.html"><strong aria-hidden="true">7.</strong> Προτιμήσεις</a></li><li class="chapter-item "><a href="../deck-options.html"><strong aria-hidden="true">8.</strong> Επιλογές τράπουλας</a></li><li class="chapter-item "><a href="../syncing.html"><strong aria-hidden="true">9.</strong> Συγχρονισμός με το AnkiWeb</a></li><li class="chapter-item "><a href="../profiles.html"><strong aria-hidden="true">10.</strong> Προφίλ</a></li><li class="chapter-item "><a href="../browsing.html"><strong aria-hidden="true">11.</strong> Περιήγηση</a></li><li class="chapter-item "><a href="../filtered-decks.html"><strong aria-hidden="true">12.</strong> Φιλτραρισμένες τράπουλες</a></li><li class="chapter-item "><a href="../searching.html"><strong aria-hidden="true">13.</strong> Αναζήτηση</a></li><li class="chapter-item expanded "><a href="../importing/intro.html"><strong aria-hidden="true">14.</strong> Εισαγωγή</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../importing/text-files.html" class="active"><strong aria-hidden="true">14.1.</strong> Αρχεία κειμένου</a></li><li class="chapter-item "><a href="../importing/packaged-decks.html"><strong aria-hidden="true">14.2.</strong> Πακεταρισμένες τράπουλες</a></li></ol></li><li class="chapter-item "><a href="../exporting.html"><strong aria-hidden="true">15.</strong> Εξαγωγή</a></li><li class="chapter-item "><a href="../backups.html"><strong aria-hidden="true">16.</strong> Αντίγραφα ασφαλείας</a></li><li class="chapter-item "><a href="../files.html"><strong aria-hidden="true">17.</strong> Διαχείριση αρχείων</a></li><li class="chapter-item "><a href="../stats.html"><strong aria-hidden="true">18.</strong> Στατιστικά</a></li><li class="chapter-item "><a href="../media.html"><strong aria-hidden="true">19.</strong> Πολυμέσα</a></li><li class="chapter-item "><a href="../math.html"><strong aria-hidden="true">20.</strong> Μαθηματικά & Σύμβολα</a></li><li class="chapter-item "><a href="../leeches.html"><strong aria-hidden="true">21.</strong> Leeches</a></li><li class="chapter-item "><a href="../addons.html"><strong aria-hidden="true">22.</strong> Πρόσθετα</a></li><li class="chapter-item "><a href="../sync-server.html"><strong aria-hidden="true">23.</strong> Εξυπηρετητής συγχρονισμού</a></li><li class="chapter-item "><a href="../misc.html"><strong aria-hidden="true">24.</strong> Διάφορα</a></li><li class="chapter-item affix "><a href="../contrib.html">Συνεισφέροντας</a></li><li class="chapter-item affix "><a href="../faqs.html">Συχνές ερωτήσεις</a></li><li class="chapter-item affix "><a href="../resources.html">Πηγές</a></li></ol>
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky bordered">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
-                        </button>
+                        </label>
                         <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
                     </div>
@@ -136,7 +163,7 @@
                 </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
+                <script>
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
@@ -152,7 +179,6 @@
 <li><a href="#html">HTML</a></li>
 <li><a href="#importing-media">Importing Media</a></li>
 <li><a href="#bulk-media">Bulk Media</a></li>
-<li><a href="#adding-tags">Adding Tags</a></li>
 <li><a href="#duplicates-and-updating">Duplicates and Updating</a></li>
 <li><a href="#file-headers">File Headers</a>
 <ul>
@@ -175,15 +201,15 @@ file first.</p>
 <p>The files must be in UTF-8 format (see below).</p>
 </li>
 <li>
-<p>The first line also defines the separating character – if Anki finds
-a ';' on the first line it will use that, if it finds a comma it’ll
-use that, etc.</p>
-</li>
-<li>
 <p>Anki determines the number of fields in the file by looking at the first
 (non-commented) line. If some of the later records in the file contain fewer
 fields, Anki will treat the missing fields as if they were blank. If some of your
 records contain extra fields, the extra content will not be imported.</p>
+</li>
+<li>
+<p>Anki tries to guess which field separator (commas, tabs, etc.) your file uses.
+If it guesses wrongly, you can change it in the import options window and preview
+the results. Or you can add <a href="#file-headers">file headers</a> to force a specific field separator.</p>
 </li>
 </ul>
 <p>Fields in your text file can be mapped to any field in your notes,
@@ -195,21 +221,21 @@ or more of your templates, the cards will go to that deck rather than
 the one you’ve selected.</p>
 <p>This is an example of a valid file with three fields:</p>
 <pre><code>apple;banana;grape
-some text;other text;yet more text
+first field;second field;third field
 </code></pre>
 <p>There are two ways to include newlines or the field separator in fields.</p>
 <p><strong>Escape the characters by placing the contents of the field in
 quotation marks</strong>:</p>
-<pre><code>hello;&quot;this is
-a two line answer&quot;
+<pre><code>hello;"this is
+a two line answer"
 two;this is a one line field
-&quot;this includes a ; (semicolon)&quot;;another field
+"this includes a ; (semicolon)";another field
 </code></pre>
 <p>Because quotes are used to mark where a field begins and ends, if you
 wish to include them inside your field, you need to replace a single
-doublequote with two doublequotes to &quot;escape&quot; them from the regular
+doublequote with two doublequotes to “escape” them from the regular
 handling, like so:</p>
-<pre><code>field one;&quot;field two with &quot;&quot;escaped quotes&quot;&quot; inside it&quot;
+<pre><code>field one;"field two with ""escaped quotes"" inside it"
 </code></pre>
 <p>When you use a spreadsheet program like Libreoffice to create the CSV
 file for you, it will automatically take care of escaping double quotes.</p>
@@ -217,7 +243,7 @@ file for you, it will automatically take care of escaping double quotes.</p>
 <pre><code>hello; this is&lt;br&gt;a two line answer
 two; this is a one line one
 </code></pre>
-<p>You need to turn on the &quot;allow HTML in fields&quot; checkbox in the import
+<p>You need to turn on the <strong>Allow HTML in fields</strong> in the import
 dialog for HTML newlines to work.</p>
 <p>Escaped multi-lines will not work correctly if you are using cloze
 deletions that span multiple lines. In this case, please use HTML
@@ -233,22 +259,22 @@ field1;field2;field3
 </code></pre>
 <h2 id="spreadsheets-and-utf-8"><a class="header" href="#spreadsheets-and-utf-8">Spreadsheets and UTF-8</a></h2>
 <p>If you have non-Latin characters in your file (such as accents, Japanese
-and so on), Anki expects files to be saved in a 'UTF-8 encoding'. The
+and so on), Anki expects files to be saved in a “UTF-8 encoding”. The
 easiest way to do this is to use the free LibreOffice spreadsheet
 program instead of Excel to edit your file, as it supports UTF-8 easily,
 and also exports multi-line content properly, unlike Excel. If you wish
-to keep using Excel, please see <a href="https://docs.google.com/document/d/12YE_FS6A9ANLTESJNtPP116ti4nNmCBghyoJBRtno_k/edit?usp=sharing">this forum post</a>
+to keep using Excel, please see <a href="https://docs.google.com/document/d/12YE_FS6A9ANLTESJNtPP116ti4nNmCBghyoJBRtno_k/edit?usp=sharing">this doc</a>
 for more information.</p>
 <p>To save your spreadsheet to a file Anki can read with LibreOffice, go to
-File&gt;Save As, and then select CSV for the type of file. After
+<strong>File &gt; Save As</strong>, and then select CSV for the type of file. After
 accepting the default options, LibreOffice will save the file and you
 can then import the saved file into Anki.</p>
 <h2 id="html"><a class="header" href="#html">HTML</a></h2>
 <p>Anki can treat text imported from text files as HTML (the language used
 for web pages). This means that text with bold, italics and other
 formatting can be exported to a text file and imported again. If you
-want to include HTML formatting, you can check the &quot;allow HTML in
-fields&quot; checkbox when importing. You may wish to turn this off if you’re
+want to include HTML formatting, you can check the “allow HTML in
+fields” checkbox when importing. You may wish to turn this off if you’re
 trying to import cards whose content contains angle brackets or other
 HTML syntax.</p>
 <p>If you wish to use HTML for formatting your file but also wish to
@@ -265,20 +291,20 @@ the files into the <a href="../files.html">collection.media folder</a>. <strong>
 subdirectories in the media folder, or some features will not work.</strong></p>
 <p>After you’ve copied the files, change one of the fields in your text
 file as follows.</p>
-<pre><code>&lt;img src=&quot;myimage.jpg&quot;&gt;
+<pre><code>&lt;img src="myimage.jpg"&gt;
 </code></pre>
 <p>or</p>
 <pre><code>[sound:myaudio.mp3]
 </code></pre>
 <p>Alternatively, you can use the <a href="../browsing.html">find and replace</a> feature
 in the browse screen to update all the fields at once. If each field
-contains text like &quot;myaudio&quot;, and you wish to make it play a sound,
-you’d search for (.*) and replace it with &quot;[sound:\1.mp3]&quot;, with the
-'regular expressions' option enabled.</p>
+contains text like “myaudio”, and you wish to make it play a sound,
+you’d search for (.*) and replace it with “[sound:\1.mp3]”, with the
+<strong>regular expressions</strong> option enabled.</p>
 <p>When importing a text file with these references, you must make sure to
-enable the &quot;Allow HTML&quot; option.</p>
+enable the “Allow HTML” option.</p>
 <p>You might be tempted to do this in a template, like:</p>
-<pre><code>&lt;img src=&quot;{{field name}}&quot;&gt;
+<pre><code>&lt;img src="{{field name}}"&gt;
 </code></pre>
 <p>Anki doesn’t support this for two reasons: searching for used media is
 expensive, as each card has to be rendered, and such functionality isn’t
@@ -286,17 +312,12 @@ obvious to shared deck users. Please use the find &amp; replace technique
 instead.</p>
 <h2 id="bulk-media"><a class="header" href="#bulk-media">Bulk Media</a></h2>
 <p>Another option for importing large amounts of media at once is to use
-the <a href="https://ankiweb.net/shared/info/1531997860">media import add-on</a>.
+the <a href="https://ankiweb.net/shared/info/129299120">media import add-on</a>.
 This add-on will automatically create notes for all files in a folder
 you select, with the filenames on the front (minus the file extension,
-so if you have a file named apple.jpg, the front would say 'apple') and
+so if you have a file named apple.jpg, the front would say “apple”) and
 the images or audio on the back. If you would like a different
 arrangement of media and filenames, you can <a href="../browsing.html">change the note type</a> of the created cards afterwards.</p>
-<h2 id="adding-tags"><a class="header" href="#adding-tags">Adding Tags</a></h2>
-<p>If you want to add 'tag1' and 'tag2' to every line you’re importing, add
-the following to the top of the text file:</p>
-<pre><code>tags:tag1 tag2
-</code></pre>
 <h2 id="duplicates-and-updating"><a class="header" href="#duplicates-and-updating">Duplicates and Updating</a></h2>
 <p>When importing text files, Anki uses the first field to determine if a
 note is unique. By default, if the file you are importing has a first
@@ -306,9 +327,9 @@ existing note’s other fields will be updated based on content of the
 imported file. A drop-down box in the import screen allows you to change
 this behaviour, to either ignore duplicates completely, or import them
 as new notes instead of updating existing ones.</p>
-<p>The 'match scope' setting controls how duplicates are identified. When
-'notetype' is selected, Anki will identify a duplicate if another note
-with the same notetype has the same first field. When set to 'notetype and deck',
+<p>The <strong>match scope</strong> setting controls how duplicates are identified. When
+<strong>note type</strong> is selected, Anki will identify a duplicate if another note
+with the same note type has the same first field. When set to <strong>note type and deck</strong>,
 a duplicate will only be flagged if the existing note also happens to be
 in the deck you are importing into.</p>
 <p>If you have updating turned on and older versions of the notes you’re
@@ -321,34 +342,29 @@ scheduling information on all their cards will be preserved.</p>
 <h2 id="file-headers"><a class="header" href="#file-headers">File Headers</a></h2>
 <p>Anki 2.1.54+ supports certain headers that can be included in the text file to
 make importing more powerful or convenient. They consist of <code>#key:value</code> pairs
-and must be listed in separate lines at the top of the file, though the <a href="#adding-tags">tags line</a>
-may precede them. Since header lines start with the comment character <code>#</code>, earlier
-Anki clients will just ignore them.</p>
-<p>You must enable the new importing option in the preferences screen to use this on
-2.1.54. On 2.1.55, the new importing path is the default.</p>
+and must be listed in separate lines at the top of the file.</p>
 <div class="table-wrapper"><table><thead><tr><th>Key</th><th>Allowed Values</th><th>Behaviour</th></tr></thead><tbody>
 <tr><td><code>separator</code></td><td><code>Comma</code>, <code>Semicolon</code>, <code>Tab</code>, <code>Space</code>, <code>Pipe</code>, <code>Colon</code>, or the according literal characters</td><td>Determines the field separator.</td></tr>
 <tr><td><code>html</code></td><td><code>true</code>, <code>false</code></td><td>Determines whether the file is treated as HTML.</td></tr>
-<tr><td><code>tags</code></td><td>List of tags, separated by spaces</td><td>Same as <a href="#adding-tags">the old syntax</a>.</td></tr>
+<tr><td><code>tags</code></td><td>List of tags, separated by spaces</td><td>Adds the listed tags to every imported note.</td></tr>
 <tr><td><code>columns</code></td><td>List of names, separated by the previously set separator</td><td>Determines the number of columns and shows their given names when importing.</td></tr>
-<tr><td><code>notetype</code></td><td>Notetype name or id</td><td>Presets the notetype, if it exists.</td></tr>
+<tr><td><code>notetype</code></td><td>Note type name or id</td><td>Presets the note type, if it exists.</td></tr>
 <tr><td><code>deck</code></td><td>Deck name or id</td><td>Presets the deck, if it exists.</td></tr>
-<tr><td><code>notetype column</code></td><td><code>1</code>, <code>2</code>, <code>3</code>, ...</td><td>Determines which column contains the notetype name or id of each note, see <a href="#notetype-column">Notetype Column</a>.</td></tr>
-<tr><td><code>deck column</code></td><td><code>1</code>, <code>2</code>, <code>3</code>, ...</td><td>Determines which column contains the deck name or id of each note, see <a href="#deck-column">Deck Column</a>.</td></tr>
-<tr><td><code>tags column</code></td><td><code>1</code>, <code>2</code>, <code>3</code>, ...</td><td>Determines which column contains the tags of each note.</td></tr>
-<tr><td><code>guid column</code></td><td><code>1</code>, <code>2</code>, <code>3</code>, ...</td><td>Determines which column contains the GUID of each note, see <a href="#guid-column">GUID Column</a>.</td></tr>
+<tr><td><code>notetype column</code></td><td><code>1</code>, <code>2</code>, <code>3</code>, …</td><td>Determines which column contains the note type name or id of each note, see <a href="#notetype-column">Notetype Column</a>.</td></tr>
+<tr><td><code>deck column</code></td><td><code>1</code>, <code>2</code>, <code>3</code>, …</td><td>Determines which column contains the deck name or id of each note, see <a href="#deck-column">Deck Column</a>.</td></tr>
+<tr><td><code>tags column</code></td><td><code>1</code>, <code>2</code>, <code>3</code>, …</td><td>Determines which column contains the tags of each note.</td></tr>
+<tr><td><code>guid column</code></td><td><code>1</code>, <code>2</code>, <code>3</code>, …</td><td>Determines which column contains the GUID of each note, see <a href="#guid-column">GUID Column</a>.</td></tr>
 </tbody></table>
 </div>
 <p>Some headers have further implications.</p>
 <h3 id="notetype-column"><a class="header" href="#notetype-column">Notetype Column</a></h3>
-<p>Usually, all notes from a file will be mapped to a single notetype, and you may
-choose which column should be mapped to which field of that notetype.</p>
-<p>That changes, if there is a column with notetype names or ids. This allows to
-import notes with different notetypes, and their fields will be mapped implicitly:
+<p>Usually, all notes from a file will be mapped to a single note type. That changes, if there is a column with note type names or ids.</p>
+<p>This allows you to
+import notes with different note types, and their fields will be mapped implicitly:
 The first regular column is used for the first field of any note regardless of
-its notetype, the second regular column for the second field, and so on.
-A 'regular column' here being a column that does not contain special information
-like decks, tags, notetypes or GUIDs.</p>
+its note type, the second regular column for the second field, and so on.
+A <em>regular column</em> here being a column that does not contain special information
+like decks, tags, note types or GUIDs.</p>
 <h3 id="deck-column"><a class="header" href="#deck-column">Deck Column</a></h3>
 <p>Usually, any new cards created as a result of importing a text file will be placed
 in a single deck of your choice. If the file contains a deck column, however, new
@@ -358,13 +374,16 @@ exist, a deck with the given name will be created.</p>
 <p>GUID stands for <em>Globally Unique Identifier</em>. When you create notes in Anki, Anki
 assigns each note a unique ID, which can be used for duplicate checking. If you
 export your notes with the GUID included, you can make changes to the notes, and
-as long as you do not modify the GUID field, you'll be able to import the notes back
+as long as you do not modify the GUID field, you’ll be able to import the notes back
 in to update the existing notes.</p>
 <p>Please note that the GUID is intended to be created by Anki. If you are creating
-your own IDs, such as MYNOTE0001, then it's recommended that you place the IDs
-in the first field, instead of assigning them to Anki's internal GUID. When importing,
-Anki is able to use the first field for duplicate checking as well, so you do not
+your own IDs, such as <code>MYNOTE0001</code>, then it’s recommended that you place the IDs
+in the first field, instead of assigning them to Anki’s internal GUID. When importing,
+Anki is able to use either the first field or the GUID for duplicate checking, so you do not
 need to make IDs a GUID in order to be able to update your notes.</p>
+<p>One other thing to note is that the duplicate option will not work for rows that have a
+non-empty GUID. If a GUID is provided, and already exists in the collection, a duplicate will
+not be created.</p>
 
                     </main>
 
@@ -374,7 +393,7 @@ need to make IDs a GUID in order to be able to update your notes.</p>
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="../importing/packaged-decks.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../importing/packaged-decks.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -388,7 +407,7 @@ need to make IDs a GUID in order to be able to update your notes.</p>
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="../importing/packaged-decks.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../importing/packaged-decks.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
@@ -398,21 +417,22 @@ need to make IDs a GUID in order to be able to update your notes.</p>
 
 
 
-        <script type="text/javascript">
+        <script>
             window.playground_copyable = true;
         </script>
 
 
-        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
 
-        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
 
         <!-- Custom JS scripts -->
 
 
+    </div>
     </body>
 </html>

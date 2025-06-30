@@ -1,17 +1,16 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
+<html lang="en" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Περιήγηση - Anki Manual</title>
+        <title>Browsing - Anki Manual</title>
 
 
         <!-- Custom HTML head -->
-        
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="">
+
+        <meta name="description" content="Anki&#x27;s user manual. Anki is a flashcard program that makes learning easier.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff">
 
         <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
@@ -25,26 +24,44 @@
         <link rel="stylesheet" href="fonts/fonts.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="css/kbd.css">
+        <link rel="stylesheet" href="css/misc.css">
+        <link rel="stylesheet" href="css/mdbook-admonish.css">
 
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
     </head>
     <body>
-        <!-- Provide site root to javascript -->
-        <script type="text/javascript">
-            var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
-        </script>
-
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
+        <script>
             try {
-                var theme = localStorage.getItem('mdbook-theme');
-                var sidebar = localStorage.getItem('mdbook-sidebar');
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
 
                 if (theme.startsWith('"') && theme.endsWith('"')) {
                     localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
@@ -57,56 +74,66 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
-            var theme;
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
-            var html = document.querySelector('html');
-            html.classList.remove('no-js')
+            const html = document.documentElement;
             html.classList.remove('light')
             html.classList.add(theme);
-            html.classList.add('js');
+            html.classList.add("js");
         </script>
 
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
-            var html = document.querySelector('html');
-            var sidebar = 'hidden';
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
+            sidebar_toggle.checked = sidebar === 'visible';
             html.classList.remove('sidebar-visible');
             html.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item affix "><a href="intro.html">Εισαγωγή</a></li><li class="chapter-item "><a href="background.html"><strong aria-hidden="true">1.</strong> Υπόβαθρο</a></li><li class="chapter-item "><a href="platform/intro.html"><strong aria-hidden="true">2.</strong> Σημειώσεις πλατφόρμας</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="platform/windows/installing.html"><strong aria-hidden="true">2.1.</strong> Windows</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="platform/windows/installing.html"><strong aria-hidden="true">2.1.1.</strong> Εγκατάσταση & Αναβάθμιση</a></li><li class="chapter-item "><a href="platform/windows/installation-issues.html"><strong aria-hidden="true">2.1.2.</strong> Προβλήματα εγκατάστασης</a></li><li class="chapter-item "><a href="platform/windows/startup-issues.html"><strong aria-hidden="true">2.1.3.</strong> Προβλήματα εκκίνησης</a></li><li class="chapter-item "><a href="platform/windows/display-issues.html"><strong aria-hidden="true">2.1.4.</strong> Προβλήματα οθόνης</a></li><li class="chapter-item "><a href="platform/windows/copy-and-paste.html"><strong aria-hidden="true">2.1.5.</strong> Προβλήματα αντιγραφής και επικόλλησης</a></li><li class="chapter-item "><a href="platform/windows/text-size.html"><strong aria-hidden="true">2.1.6.</strong> Μέγεθος κειμένου</a></li><li class="chapter-item "><a href="platform/windows/permission-problems.html"><strong aria-hidden="true">2.1.7.</strong> Προβλήματα άδειας</a></li></ol></li><li class="chapter-item "><a href="platform/mac/installing.html"><strong aria-hidden="true">2.2.</strong> macOS</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="platform/mac/installing.html"><strong aria-hidden="true">2.2.1.</strong> Εγκατάσταση & Αναβάθμιση</a></li><li class="chapter-item "><a href="platform/mac/display-issues.html"><strong aria-hidden="true">2.2.2.</strong> Προβλήματα οθόνης</a></li></ol></li><li class="chapter-item "><a href="platform/linux/installing.html"><strong aria-hidden="true">2.3.</strong> Linux</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="platform/linux/installing.html"><strong aria-hidden="true">2.3.1.</strong> Εγκατάσταση & Αναβάθμιση</a></li><li class="chapter-item "><a href="platform/linux/missing-libraries.html"><strong aria-hidden="true">2.3.2.</strong> Missing Libraries</a></li><li class="chapter-item "><a href="platform/linux/display-issues.html"><strong aria-hidden="true">2.3.3.</strong> Προβλήματα οθόνης</a></li><li class="chapter-item "><a href="platform/linux/blank-window.html"><strong aria-hidden="true">2.3.4.</strong> Μαύρο κύριο παράθυρο</a></li><li class="chapter-item "><a href="platform/linux/distro-packages.html"><strong aria-hidden="true">2.3.5.</strong> Πακέτα διανομής Linux</a></li><li class="chapter-item "><a href="platform/linux/gtk-theme.html"><strong aria-hidden="true">2.3.6.</strong> Λάθος θέμα GTK</a></li><li class="chapter-item "><a href="platform/linux/wayland.html"><strong aria-hidden="true">2.3.7.</strong> Wayland</a></li><li class="chapter-item "><a href="platform/linux/input-methods.html"><strong aria-hidden="true">2.3.8.</strong> Μέθοδοι καταχώρησης</a></li></ol></li></ol></li><li class="chapter-item "><a href="getting-started.html"><strong aria-hidden="true">3.</strong> Getting Started</a></li><li class="chapter-item "><a href="studying.html"><strong aria-hidden="true">4.</strong> Μελέτη</a></li><li class="chapter-item "><a href="editing.html"><strong aria-hidden="true">5.</strong> Προσθήκη/Επεξεργασία</a></li><li class="chapter-item "><a href="templates/intro.html"><strong aria-hidden="true">6.</strong> Πρότυπα καρτών</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="templates/fields.html"><strong aria-hidden="true">6.1.</strong> Αντικαταστάσεις πεδίου</a></li><li class="chapter-item "><a href="templates/generation.html"><strong aria-hidden="true">6.2.</strong> Δημιουργία καρτών</a></li><li class="chapter-item "><a href="templates/styling.html"><strong aria-hidden="true">6.3.</strong> Στυλ & HTML</a></li><li class="chapter-item "><a href="templates/errors.html"><strong aria-hidden="true">6.4.</strong> Έλεγχοι και Σφάλματα</a></li></ol></li><li class="chapter-item "><a href="preferences.html"><strong aria-hidden="true">7.</strong> Προτιμήσεις</a></li><li class="chapter-item "><a href="deck-options.html"><strong aria-hidden="true">8.</strong> Επιλογές τράπουλας</a></li><li class="chapter-item "><a href="syncing.html"><strong aria-hidden="true">9.</strong> Συγχρονισμός με το AnkiWeb</a></li><li class="chapter-item "><a href="profiles.html"><strong aria-hidden="true">10.</strong> Προφίλ</a></li><li class="chapter-item expanded "><a href="browsing.html" class="active"><strong aria-hidden="true">11.</strong> Περιήγηση</a></li><li class="chapter-item "><a href="filtered-decks.html"><strong aria-hidden="true">12.</strong> Φιλτραρισμένες τράπουλες</a></li><li class="chapter-item "><a href="searching.html"><strong aria-hidden="true">13.</strong> Αναζήτηση</a></li><li class="chapter-item "><a href="importing/intro.html"><strong aria-hidden="true">14.</strong> Εισαγωγή</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="importing/text-files.html"><strong aria-hidden="true">14.1.</strong> Αρχεία κειμένου</a></li><li class="chapter-item "><a href="importing/packaged-decks.html"><strong aria-hidden="true">14.2.</strong> Πακεταρισμένες τράπουλες</a></li></ol></li><li class="chapter-item "><a href="exporting.html"><strong aria-hidden="true">15.</strong> Εξαγωγή</a></li><li class="chapter-item "><a href="backups.html"><strong aria-hidden="true">16.</strong> Αντίγραφα ασφαλείας</a></li><li class="chapter-item "><a href="files.html"><strong aria-hidden="true">17.</strong> Διαχείριση αρχείων</a></li><li class="chapter-item "><a href="stats.html"><strong aria-hidden="true">18.</strong> Στατιστικά</a></li><li class="chapter-item "><a href="media.html"><strong aria-hidden="true">19.</strong> Πολυμέσα</a></li><li class="chapter-item "><a href="math.html"><strong aria-hidden="true">20.</strong> Μαθηματικά & Σύμβολα</a></li><li class="chapter-item "><a href="leeches.html"><strong aria-hidden="true">21.</strong> Leeches</a></li><li class="chapter-item "><a href="addons.html"><strong aria-hidden="true">22.</strong> Πρόσθετα</a></li><li class="chapter-item "><a href="sync-server.html"><strong aria-hidden="true">23.</strong> Εξυπηρετητής συγχρονισμού</a></li><li class="chapter-item "><a href="misc.html"><strong aria-hidden="true">24.</strong> Διάφορα</a></li><li class="chapter-item affix "><a href="contrib.html">Συνεισφέροντας</a></li><li class="chapter-item affix "><a href="faqs.html">Συχνές ερωτήσεις</a></li><li class="chapter-item affix "><a href="resources.html">Πηγές</a></li></ol>
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky bordered">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
-                        </button>
+                        </label>
                         <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
                     </div>
@@ -136,7 +163,7 @@
                 </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
+                <script>
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
@@ -191,8 +218,8 @@ of the search area, or pressing <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>T</kbd> or
 <kbd>Cmd</kbd>+<kbd>Opt</kbd>+<kbd>T</kbd>. The switch also indicates if <strong>C</strong>ards
 or <strong>N</strong>otes are currently shown.</p>
 <p><strong>Note</strong>: For the sake of simplicity, this manual generally assumes the Cards
-mode to be the active one. Whenever selecting/finding/etc. &quot;cards&quot; is mentioned,
-the reader may substitute it for &quot;cards or notes depending on the active mode&quot;.</p>
+mode to be the active one. Whenever selecting/finding/etc. “cards” is mentioned,
+the reader may substitute it for “cards or notes depending on the active mode”.</p>
 <h2 id="sidebar"><a class="header" href="#sidebar">Sidebar</a></h2>
 <p>The <em>sidebar</em> on the left allows quick access to common search terms. On Anki
 2.1.45+, it also provides a searchbar, facilities to edit tags and decks, and a
@@ -206,8 +233,8 @@ will search for it.</p>
 <p>You can hold down <kbd>Ctrl</kbd> (<kbd>Command</kbd> on Mac) while clicking in
 order to append the clicked item to the current search with an AND condition,
 instead of starting a new search. If you wanted to show <em>learning</em> cards that were
-also in the German deck for instance, you could click on &quot;Learning&quot;,
-then <kbd>Ctrl</kbd>-click on &quot;German&quot;.</p>
+also in the German deck for instance, you could click on “Learning”,
+then <kbd>Ctrl</kbd>-click on “German”.</p>
 <p>You can hold down <kbd>Shift</kbd> to create an OR search instead of an AND. For
 example, you could click one deck, then <kbd>Shift</kbd>-click another to show
 cards from either of the decks in the same view.</p>
@@ -219,7 +246,7 @@ will result in adding a new search term that is negated).</p>
 <p>On Anki 2.1.39+, you can also hold down both <kbd>Ctrl</kbd> and
 <kbd>Shift</kbd> together when clicking a search term to replace all occurrences of the
 same kind of search with the new one.
-Let's say you had previously typed in a complicated search expression like
+Let’s say you had previously typed in a complicated search expression like
 <code>deck:Swahili (is:due or tag:important)</code>
 and now want to perform the same search for your Urdu deck. You can hold down
 <kbd>Ctrl</kbd>+<kbd>Shift</kbd> while clicking the Urdu deck in the sidebar to obtain the
@@ -252,13 +279,13 @@ from the right-click menu, or by using a shortcut key (<kbd>Del</kbd> and
 (see <a href="#selection-tool">Selection Tool</a>).</p>
 <h3 id="finding-items"><a class="header" href="#finding-items">Finding Items</a></h3>
 <p>To find a certain item in the sidebar tree, type part of its name into the searchbar
-at the top to temporarily hide all items not matching the search.</p>
+at the top.</p>
 <h2 id="search-box"><a class="header" href="#search-box">Search Box</a></h2>
 <p>Above the card list is a search box. You can type in various things
 there to search for cards. For information on the search syntax,
 see <a href="searching.html">Searching</a>.</p>
 <h2 id="cardnote-table"><a class="header" href="#cardnote-table">Card/Note Table</a></h2>
-<p>The table's rows represent cards or notes that match the current search.
+<p>The table’s rows represent cards or notes that match the current search.
 When you click on a row, the corresponding note will be shown in the bottom section.</p>
 <h3 id="rows"><a class="header" href="#rows">Rows</a></h3>
 <p>If you drag the mouse or hold <kbd>Ctrl</kbd> or <kbd>Command</kbd> to select multiple
@@ -277,13 +304,13 @@ the first match will be used:</p>
 <ol>
 <li>if the card is <strong>flagged</strong>, use the flag colour,</li>
 <li>if the card is <strong>suspended</strong>, yellow,</li>
-<li>if the card's note is <strong>marked</strong>, purple.</li>
+<li>if the card’s note is <strong>marked</strong>, purple.</li>
 </ol>
 <p>In Notes mode, colour is only applied to marked notes.<br />
 For more information about marked notes and suspended cards, see <a href="studying.html#editing-and-more">Editing and More</a>.</p>
 <h3 id="columns"><a class="header" href="#columns">Columns</a></h3>
 <p>The columns are configurable: right click on one (or <kbd>Ctrl</kbd>-click on a
-Mac) to choose which columns you'd like to see.
+Mac) to choose which columns you’d like to see.
 You can drag columns to reorder them. Clicking on a column will sort by that column;
 click again to reverse the sort order. Note that you cannot sort by the Question
 and Answer columns.</p>
@@ -293,20 +320,20 @@ the behaviours for both modes.</p>
 <!-- prettier-ignore -->
 <div class="table-wrapper"><table><thead><tr><th>Column</th><th>Cards mode</th><th>Notes mode</th></tr></thead><tbody>
 <tr><td>Answer</td><td>The back side of the card in one line with the question stripped. You can also choose a <a href="templates/styling.html#browser-appearance">custom format</a> in the card type editor instead.</td><td>The same as in Cards mode, only for the first card of the note.</td></tr>
-<tr><td>Card(s)</td><td>The name of the card's template.</td><td>The number of cards the note has.</td></tr>
-<tr><td>Card Modified</td><td>The last time changes were made to the card (e.g. when you reviewed the card and the review history and interval were updated).</td><td>The last time changes were made to one of the note's cards.</td></tr>
-<tr><td>Created</td><td>The same as in Notes mode for the card's note.</td><td>The date the note was created.</td></tr>
-<tr><td>Deck</td><td>The name of the deck the card is in.</td><td>The number of different decks the note's cards are in, or the deck name if all cards are in the same deck.</td></tr>
-<tr><td>Due</td><td>The due date for cards in review or (re)learning, and the position in the new card queue for new cards. The line is wrapped in brackets if the card is suspended or buried. Sorting is done by type and only then by date or position.</td><td>The due date for the note's next due review or (re)learning card that is not suspended, buried or in a filtered deck.</td></tr>
-<tr><td>(Avg.) Ease</td><td>The card's ease if it is not new.</td><td>The average ease for the note's cards that are not new.</td></tr>
-<tr><td>(Avg.) Interval</td><td>The card's interval if the card is in review or relearning.</td><td>The average interval for the note's cards that are in review or relearning.</td></tr>
+<tr><td>Card(s)</td><td>The name of the card’s template.</td><td>The number of cards the note has.</td></tr>
+<tr><td>Card Modified</td><td>The last time changes were made to the card (e.g. when you reviewed the card and the review history and interval were updated).</td><td>The last time changes were made to one of the note’s cards.</td></tr>
+<tr><td>Created</td><td>The same as in Notes mode for the card’s note.</td><td>The date the note was created.</td></tr>
+<tr><td>Deck</td><td>The name of the deck the card is in.</td><td>The number of different decks the note’s cards are in, or the deck name if all cards are in the same deck.</td></tr>
+<tr><td>Due</td><td>The due date for cards in review or (re)learning, and the position in the new card queue for new cards. The line is wrapped in brackets if the card is suspended or buried. Sorting is done by type and only then by date or position.</td><td>The due date for the note’s next due review or (re)learning card that is not suspended, buried or in a filtered deck.</td></tr>
+<tr><td>(Avg.) Ease</td><td>The card’s ease if it is not new.</td><td>The average ease for the note’s cards that are not new.</td></tr>
+<tr><td>(Avg.) Interval</td><td>The card’s interval if the card is in review or relearning.</td><td>The average interval for the note’s cards that are in review or relearning.</td></tr>
 <tr><td>Lapses</td><td>How often the card was rated “Again”.</td><td>The total lapses for all cards of the note.</td></tr>
-<tr><td>Note</td><td>The same as in Notes mode for the card's note.</td><td>The name of the note's notetype.</td></tr>
-<tr><td>Note Modified</td><td>The same as in Notes mode for the card's note.</td><td>The last time the note (e.g. the content of a field) was edited.</td></tr>
+<tr><td>Note</td><td>The same as in Notes mode for the card’s note.</td><td>The name of the note’s note type.</td></tr>
+<tr><td>Note Modified</td><td>The same as in Notes mode for the card’s note.</td><td>The last time the note (e.g. the content of a field) was edited.</td></tr>
 <tr><td>Question</td><td>The front side of the card in one line. You can also choose a <a href="templates/styling.html#browser-appearance">custom format</a> in the card type editor instead.</td><td>The same as in Cards mode, only for the first card of the note.</td></tr>
 <tr><td>Reviews</td><td>How often the card has been reviewed.</td><td>The total review count for all cards of the note.</td></tr>
-<tr><td>Sort Field</td><td>The same as in Notes mode for the card's note.</td><td>The content of the note's field that is defined as the notetype's sort field. Only this one field can be displayed and sorted by. You can change the sort field by clicking <strong>Fields...</strong> in the editing area.</td></tr>
-<tr><td>Tags</td><td>The same as in Notes mode for the card's note.</td><td>The note's tags.</td></tr>
+<tr><td>Sort Field</td><td>The same as in Notes mode for the card’s note.</td><td>The content of the note’s field that is defined as the note type’s sort field. Only this one field can be displayed and sorted by. You can change the sort field by clicking <strong>Fields…</strong> in the editing area.</td></tr>
+<tr><td>Tags</td><td>The same as in Notes mode for the card’s note.</td><td>The note’s tags.</td></tr>
 </tbody></table>
 </div>
 <h2 id="editing-area"><a class="header" href="#editing-area">Editing Area</a></h2>
@@ -328,7 +355,7 @@ turn offer various actions that can be performed in the browser.</p>
 <tr><td>Select All</td><td>Select all rows displayed.</td></tr>
 <tr><td>Select Notes</td><td>Show only the currently selected notes and select all rows.</td></tr>
 <tr><td>Invert Selection</td><td>Select those rows not selected, and deselect the currently selected rows.</td></tr>
-<tr><td>Create Filtered Deck</td><td>Show the <a href="filtered-decks.html#creating-manually">filtered deck</a> dialog and set the current browser search as a filter. Use <kbd>Alt</kbd> / <kbd>Option</kbd> to set the second filter instead (requires scheduler version 2+).</td></tr>
+<tr><td>Create Filtered Deck</td><td>Show the <a href="filtered-decks.html#creating-manually">filtered deck</a> dialog and set the current browser search as a filter. Use <kbd>Alt</kbd> / <kbd>Option</kbd> to set the second filter instead.</td></tr>
 </tbody></table>
 </div>
 <h3 id="notes"><a class="header" href="#notes">Notes</a></h3>
@@ -344,10 +371,10 @@ they can be found in a submenu of the context menu.</p>
 <tr><td>Remove Tags</td><td>Enter tags and remove them from all selected notes.</td></tr>
 <tr><td>Clear Unused Tags</td><td>Remove all tags from the sidebar that are not used by any notes.</td></tr>
 <tr><td>Toggle Mark</td><td>If the current note is marked (i.e., has the <em>Marked</em> tag), unmark all selected notes. If the current is not marked, mark all selected notes.</td></tr>
-<tr><td>Change Notetype</td><td>Convert the selected notes from one type to another. For example, imagine you have a <em>Russian</em> notetype and a <em>Computer</em> notetype, and you accidentally added some computer-related text into a <em>Russian</em> note. You can use this option to fix that mistake. The scheduling of cards is not affected. Changing the type of a note requires a one-way sync.</td></tr>
+<tr><td>Change Note Type</td><td>Convert the selected notes from one type to another. For example, imagine you have a <em>Russian</em> note type and a <em>Computer</em> note type, and you accidentally added some computer-related text into a <em>Russian</em> note. You can use this option to fix that mistake. The scheduling of cards is not affected. Changing the type of a note requires a one-way sync.</td></tr>
 <tr><td>Find Duplicates</td><td>Open the <a href="#finding-duplicates">Duplicates</a> dialog.</td></tr>
 <tr><td>Find and Replace</td><td>Open the <a href="#find-and-replace">Find and Replace</a> dialog.</td></tr>
-<tr><td>Manage Notetypes</td><td>Open the <a href="editing.html#adding-a-note-type">Notetypes</a> dialog.</td></tr>
+<tr><td>Manage Note Types</td><td>Open the <a href="editing.html#adding-a-note-type">Note Types</a> dialog.</td></tr>
 <tr><td>Delete</td><td>Delete all selected notes and their cards. It is not possible to remove individual cards, as individual cards are controlled by the <a href="templates/intro.html">templates</a>.</td></tr>
 </tbody></table>
 </div>
@@ -358,9 +385,9 @@ they can be found in a submenu of the context menu.</p>
 <!-- prettier-ignore -->
 <div class="table-wrapper"><table><thead><tr><th>Name</th><th>Action</th></tr></thead><tbody>
 <tr><td>Change Deck</td><td>Move currently selected cards to a different deck.</td></tr>
-<tr><td>Set Due Date</td><td>Turn cards into review cards, and make them due on a certain date. This can be useful for moving cards forward or back a few days when your study schedule is interrupted. Entering a range like <code>60-90</code> will make the selected cards due between 60 and 90 days from now. New cards will have their interval set to the same delay, but reviews will be rescheduled without changing their current interval, unless '!' is included at the end of the range. (Note that answer time is not recorded when manually scheduling cards, since the action can be performed even outside of review, and Anki isn’t aware of which card may or may not be shown at the time.)</td></tr>
-<tr><td>Forget</td><td>Move currently selected cards to the end of the new queue. The existing review history is preserved. In 2.1.50+, there are options to restore the original card position, and to reset the card's lapse and repetition counters.</td></tr>
-<tr><td>Reposition</td><td>Change the order new cards will appear in. You can find out the existing positions by enabling the <em>due</em> column, as described in the <a href="#cardnote-table">table</a> section above. If you run the reposition command when multiple cards are selected, it will apply increasing numbers to each card in turn. By default the number increases by one for each card, but this can be adjusted by changing the &quot;step&quot; setting. The <strong>Shift position of existing cards</strong> option allows you to insert cards between currently existing ones, pushing the currently existing ones apart. For instance, if you have five cards and you want to move 3, 4, and 5 between 1 and 2, selecting this setting would cause the cards to end up in the order 1, 3, 4, 5, 2. By contrast, if you turn this option off, 1 and 2 will get the same position number (and it will thus be unpredictable which of the cards with the same number comes up first). Please note that when enabled, any card with a higher position will be modified, and all of those changed cards will need to be sent the next time you sync.</td></tr>
+<tr><td>Set Due Date</td><td>Turns cards into review cards if they are new, and makes them due on a certain date. This can be useful for moving cards forward or back a few days when your study schedule is interrupted. Entering a range like <code>60-90</code> will make the selected cards due between 60 and 90 days from now. New cards will have their interval set to the same delay, but review cards will be rescheduled without changing their current interval, unless an exclamation mark (<code>!</code>) is included at the end of the range. Note that the answer time is not recorded when manually scheduling cards, since the action can be performed even outside of review, and Anki isn’t aware of which card may or may not be shown at the time.</td></tr>
+<tr><td>Reset</td><td>Move currently selected cards to the end of the new queue. The existing review history is preserved. In 2.1.50+, there are options to restore the original card position, and to reset the card’s lapse and repetition counters.</td></tr>
+<tr><td>Reposition</td><td>Change the order new cards will appear in. You can find out the existing positions by enabling the <em>due</em> column, as described in the <a href="#cardnote-table">table</a> section above. If you run the reposition command when multiple cards are selected, it will apply increasing numbers to each card in turn. By default the number increases by one for each card, but this can be adjusted by changing the “step” setting. The <strong>Shift position of existing cards</strong> option allows you to insert cards between currently existing ones, pushing the currently existing ones apart. For instance, if you have five cards and you want to move 3, 4, and 5 between 1 and 2, selecting this setting would cause the cards to end up in the order 1, 3, 4, 5, 2. By contrast, if you turn this option off, 1 and 2 will get the same position number (and it will thus be unpredictable which of the cards with the same number comes up first). Please note that when enabled, any card with a higher position will be modified, and all of those changed cards will need to be sent the next time you sync.</td></tr>
 <tr><td>Toggle Suspend</td><td><a href="studying.html#editing-and-more">Suspend</a> or unsuspend all selected cards, depending on whether the current card is suspended or not.</td></tr>
 <tr><td>Flag</td><td>Toggle the flags of all selected cards. Whether a flag is added or removed depends on whether the current card has the chosen flag.</td></tr>
 <tr><td>Info</td><td>Show various information about the current card, including its review history. For more information, see <a href="stats.html#card-info">Card Info</a>.</td></tr>
@@ -371,17 +398,17 @@ they can be found in a submenu of the context menu.</p>
 parts of the browser, and to go up and down the card list.</p>
 <h2 id="find-and-replace"><a class="header" href="#find-and-replace">Find and Replace</a></h2>
 <p>This dialog allows for replacing text on notes. As described above, it is available
-from the toolbar and the table's context menu.</p>
+from the toolbar and the table’s context menu.</p>
 <p>The first input field is for the text that is going to be replaced, the second
 one for the replacement. Next, there is a dropdown menu that allows you to specify
-where Anki should look for text to replace: in a note's tags (requires Anki 2.1.45+),
+where Anki should look for text to replace: in a note’s tags (requires Anki 2.1.45+),
 in all fields, or just in a specific field (only fields belonging to a selected
 note will be listed).</p>
 <p>By default, only selected notes will be affected. If you want to lift that
-restriction, you can untick the &quot;selected notes only&quot; checkbox (requires Anki 2.1.45+).</p>
+restriction, you can untick the “selected notes only” checkbox (requires Anki 2.1.45+).</p>
 <p>The regular expression option allows you to perform complex replacements.
 For example, assume there is the following text in a field:</p>
-<pre><code>&lt;img src=&quot;pic.jpg&quot; /&gt;
+<pre><code>&lt;img src="pic.jpg" /&gt;
 </code></pre>
 <p>We use these settings:</p>
 <p><img src="media/find_and_replace.png" alt="Find and Replace dialog" /></p>
@@ -407,12 +434,12 @@ This differs from the duplicate check when you add cards manually, which
 is limited to a single note type.</p>
 <p>The <strong>Optional filter</strong> text box allows you to narrow down where Anki will
 look for duplicates. If you only want to search for duplicates in the
-&quot;French Vocab&quot; and &quot;French Verbs&quot; note types, you would enter:</p>
-<pre><code>&quot;note:french vocab&quot; or &quot;note:french verbs&quot;
+“French Vocab” and “French Verbs” note types, you would enter:</p>
+<pre><code>"note:french vocab" or "note:french verbs"
 </code></pre>
 <p>Or you might want to look only for duplicates in a particular deck, so
 you could use:</p>
-<pre><code>&quot;deck:myDeck&quot;
+<pre><code>"deck:myDeck"
 </code></pre>
 <p>The search syntax is the same as used when searching in the browser.
 For more information, see <a href="searching.html">Searching</a>.</p>
@@ -430,7 +457,7 @@ for this tag in the browser and handle them all from the same screen.</p>
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="filtered-decks.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="filtered-decks.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -444,7 +471,7 @@ for this tag in the browser and handle them all from the same screen.</p>
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="filtered-decks.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="filtered-decks.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
@@ -454,21 +481,22 @@ for this tag in the browser and handle them all from the same screen.</p>
 
 
 
-        <script type="text/javascript">
+        <script>
             window.playground_copyable = true;
         </script>
 
 
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
 
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
 
         <!-- Custom JS scripts -->
 
 
+    </div>
     </body>
 </html>

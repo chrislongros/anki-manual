@@ -1,17 +1,16 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
+<html lang="en" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Φιλτραρισμένες τράπουλες - Anki Manual</title>
+        <title>Filtered Decks - Anki Manual</title>
 
 
         <!-- Custom HTML head -->
-        
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="">
+
+        <meta name="description" content="Anki&#x27;s user manual. Anki is a flashcard program that makes learning easier.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff">
 
         <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
@@ -25,26 +24,44 @@
         <link rel="stylesheet" href="fonts/fonts.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="css/kbd.css">
+        <link rel="stylesheet" href="css/misc.css">
+        <link rel="stylesheet" href="css/mdbook-admonish.css">
 
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
     </head>
     <body>
-        <!-- Provide site root to javascript -->
-        <script type="text/javascript">
-            var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
-        </script>
-
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
+        <script>
             try {
-                var theme = localStorage.getItem('mdbook-theme');
-                var sidebar = localStorage.getItem('mdbook-sidebar');
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
 
                 if (theme.startsWith('"') && theme.endsWith('"')) {
                     localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
@@ -57,56 +74,66 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
-            var theme;
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
-            var html = document.querySelector('html');
-            html.classList.remove('no-js')
+            const html = document.documentElement;
             html.classList.remove('light')
             html.classList.add(theme);
-            html.classList.add('js');
+            html.classList.add("js");
         </script>
 
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
-            var html = document.querySelector('html');
-            var sidebar = 'hidden';
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
+            sidebar_toggle.checked = sidebar === 'visible';
             html.classList.remove('sidebar-visible');
             html.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item affix "><a href="intro.html">Εισαγωγή</a></li><li class="chapter-item "><a href="background.html"><strong aria-hidden="true">1.</strong> Υπόβαθρο</a></li><li class="chapter-item "><a href="platform/intro.html"><strong aria-hidden="true">2.</strong> Σημειώσεις πλατφόρμας</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="platform/windows/installing.html"><strong aria-hidden="true">2.1.</strong> Windows</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="platform/windows/installing.html"><strong aria-hidden="true">2.1.1.</strong> Εγκατάσταση & Αναβάθμιση</a></li><li class="chapter-item "><a href="platform/windows/installation-issues.html"><strong aria-hidden="true">2.1.2.</strong> Προβλήματα εγκατάστασης</a></li><li class="chapter-item "><a href="platform/windows/startup-issues.html"><strong aria-hidden="true">2.1.3.</strong> Προβλήματα εκκίνησης</a></li><li class="chapter-item "><a href="platform/windows/display-issues.html"><strong aria-hidden="true">2.1.4.</strong> Προβλήματα οθόνης</a></li><li class="chapter-item "><a href="platform/windows/copy-and-paste.html"><strong aria-hidden="true">2.1.5.</strong> Προβλήματα αντιγραφής και επικόλλησης</a></li><li class="chapter-item "><a href="platform/windows/text-size.html"><strong aria-hidden="true">2.1.6.</strong> Μέγεθος κειμένου</a></li><li class="chapter-item "><a href="platform/windows/permission-problems.html"><strong aria-hidden="true">2.1.7.</strong> Προβλήματα άδειας</a></li></ol></li><li class="chapter-item "><a href="platform/mac/installing.html"><strong aria-hidden="true">2.2.</strong> macOS</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="platform/mac/installing.html"><strong aria-hidden="true">2.2.1.</strong> Εγκατάσταση & Αναβάθμιση</a></li><li class="chapter-item "><a href="platform/mac/display-issues.html"><strong aria-hidden="true">2.2.2.</strong> Προβλήματα οθόνης</a></li></ol></li><li class="chapter-item "><a href="platform/linux/installing.html"><strong aria-hidden="true">2.3.</strong> Linux</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="platform/linux/installing.html"><strong aria-hidden="true">2.3.1.</strong> Εγκατάσταση & Αναβάθμιση</a></li><li class="chapter-item "><a href="platform/linux/missing-libraries.html"><strong aria-hidden="true">2.3.2.</strong> Missing Libraries</a></li><li class="chapter-item "><a href="platform/linux/display-issues.html"><strong aria-hidden="true">2.3.3.</strong> Προβλήματα οθόνης</a></li><li class="chapter-item "><a href="platform/linux/blank-window.html"><strong aria-hidden="true">2.3.4.</strong> Μαύρο κύριο παράθυρο</a></li><li class="chapter-item "><a href="platform/linux/distro-packages.html"><strong aria-hidden="true">2.3.5.</strong> Πακέτα διανομής Linux</a></li><li class="chapter-item "><a href="platform/linux/gtk-theme.html"><strong aria-hidden="true">2.3.6.</strong> Λάθος θέμα GTK</a></li><li class="chapter-item "><a href="platform/linux/wayland.html"><strong aria-hidden="true">2.3.7.</strong> Wayland</a></li><li class="chapter-item "><a href="platform/linux/input-methods.html"><strong aria-hidden="true">2.3.8.</strong> Μέθοδοι καταχώρησης</a></li></ol></li></ol></li><li class="chapter-item "><a href="getting-started.html"><strong aria-hidden="true">3.</strong> Getting Started</a></li><li class="chapter-item "><a href="studying.html"><strong aria-hidden="true">4.</strong> Μελέτη</a></li><li class="chapter-item "><a href="editing.html"><strong aria-hidden="true">5.</strong> Προσθήκη/Επεξεργασία</a></li><li class="chapter-item "><a href="templates/intro.html"><strong aria-hidden="true">6.</strong> Πρότυπα καρτών</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="templates/fields.html"><strong aria-hidden="true">6.1.</strong> Αντικαταστάσεις πεδίου</a></li><li class="chapter-item "><a href="templates/generation.html"><strong aria-hidden="true">6.2.</strong> Δημιουργία καρτών</a></li><li class="chapter-item "><a href="templates/styling.html"><strong aria-hidden="true">6.3.</strong> Στυλ & HTML</a></li><li class="chapter-item "><a href="templates/errors.html"><strong aria-hidden="true">6.4.</strong> Έλεγχοι και Σφάλματα</a></li></ol></li><li class="chapter-item "><a href="preferences.html"><strong aria-hidden="true">7.</strong> Προτιμήσεις</a></li><li class="chapter-item "><a href="deck-options.html"><strong aria-hidden="true">8.</strong> Επιλογές τράπουλας</a></li><li class="chapter-item "><a href="syncing.html"><strong aria-hidden="true">9.</strong> Συγχρονισμός με το AnkiWeb</a></li><li class="chapter-item "><a href="profiles.html"><strong aria-hidden="true">10.</strong> Προφίλ</a></li><li class="chapter-item "><a href="browsing.html"><strong aria-hidden="true">11.</strong> Περιήγηση</a></li><li class="chapter-item expanded "><a href="filtered-decks.html" class="active"><strong aria-hidden="true">12.</strong> Φιλτραρισμένες τράπουλες</a></li><li class="chapter-item "><a href="searching.html"><strong aria-hidden="true">13.</strong> Αναζήτηση</a></li><li class="chapter-item "><a href="importing/intro.html"><strong aria-hidden="true">14.</strong> Εισαγωγή</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="importing/text-files.html"><strong aria-hidden="true">14.1.</strong> Αρχεία κειμένου</a></li><li class="chapter-item "><a href="importing/packaged-decks.html"><strong aria-hidden="true">14.2.</strong> Πακεταρισμένες τράπουλες</a></li></ol></li><li class="chapter-item "><a href="exporting.html"><strong aria-hidden="true">15.</strong> Εξαγωγή</a></li><li class="chapter-item "><a href="backups.html"><strong aria-hidden="true">16.</strong> Αντίγραφα ασφαλείας</a></li><li class="chapter-item "><a href="files.html"><strong aria-hidden="true">17.</strong> Διαχείριση αρχείων</a></li><li class="chapter-item "><a href="stats.html"><strong aria-hidden="true">18.</strong> Στατιστικά</a></li><li class="chapter-item "><a href="media.html"><strong aria-hidden="true">19.</strong> Πολυμέσα</a></li><li class="chapter-item "><a href="math.html"><strong aria-hidden="true">20.</strong> Μαθηματικά & Σύμβολα</a></li><li class="chapter-item "><a href="leeches.html"><strong aria-hidden="true">21.</strong> Leeches</a></li><li class="chapter-item "><a href="addons.html"><strong aria-hidden="true">22.</strong> Πρόσθετα</a></li><li class="chapter-item "><a href="sync-server.html"><strong aria-hidden="true">23.</strong> Εξυπηρετητής συγχρονισμού</a></li><li class="chapter-item "><a href="misc.html"><strong aria-hidden="true">24.</strong> Διάφορα</a></li><li class="chapter-item affix "><a href="contrib.html">Συνεισφέροντας</a></li><li class="chapter-item affix "><a href="faqs.html">Συχνές ερωτήσεις</a></li><li class="chapter-item affix "><a href="resources.html">Πηγές</a></li></ol>
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky bordered">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
-                        </button>
+                        </label>
                         <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
                     </div>
@@ -136,7 +163,7 @@
                 </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
+                <script>
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
@@ -153,7 +180,6 @@
 <li><a href="#creating-manually">Creating Manually</a></li>
 <li><a href="#order">Order</a></li>
 <li><a href="#steps--returning">Steps &amp; Returning</a></li>
-<li><a href="#counts">Counts</a></li>
 <li><a href="#due-reviews">Due Reviews</a></li>
 <li><a href="#reviewing-ahead">Reviewing Ahead</a></li>
 <li><a href="#rescheduling">Rescheduling</a></li>
@@ -161,41 +187,41 @@
 </ul>
 <p>When you study a regular deck in Anki, only a limited number of cards
 are shown: the cards Anki thinks you are about to forget, and a daily
-limit of new cards. This is generally useful, as it ensures you don't
+limit of new cards. This is generally useful, as it ensures you don’t
 spend more time studying than necessary. But sometimes it can be useful
 to step outside of these normal limits, such as when you need to review
 for a test, focus on particular material, and so on. To make this
-possible, Anki provides a different type of deck called a 'filtered
-deck'.</p>
+possible, Anki provides a different type of deck called a “filtered
+deck”.</p>
 <p>Filtered decks offer a lot of possibilities. They can be used for
 previewing cards, cramming cards before a test, studying particular
 tags, catching up on a backlog with a particular sort order, reviewing
-ahead of schedule, going over the day's failed cards, and more.</p>
+ahead of schedule, going over the day’s failed cards, and more.</p>
 <h2 id="custom-study"><a class="header" href="#custom-study">Custom Study</a></h2>
 <p>The easiest way to create a filtered deck is with the Custom Study
 button, which appears at the bottom of the screen when you click on a
 deck. It offers some convenient preset filters for common tasks like reviewing
 the cards that you have failed that day. It will create a filtered deck called
-&quot;Custom Study Session&quot; and automatically open it for you.</p>
-<p>If an existing &quot;Custom Study Session&quot; deck exists, it will be emptied
+“Custom Study Session” and automatically open it for you.</p>
+<p>If an existing “Custom Study Session” deck exists, it will be emptied
 before a new one is created. If you wish to keep a custom study deck,
 you can rename it from the deck list.</p>
 <p>Here is a summary of each of the options:</p>
-<p><strong>Increase today's new card limit</strong><br />
+<p><strong>Increase today’s new card limit</strong><br />
 Add more new cards to the deck you are currently studying. Note that
-unlike other options, this does 'not' create a new filtered deck, it
+unlike other options, this does “not” create a new filtered deck, it
 modifies the existing deck.</p>
-<p><strong>Increase today's review card limit</strong><br />
+<p><strong>Increase today’s review card limit</strong><br />
 If not all reviews due today were shown because of the daily review limit,
 this option allows you to show more of them. As with the new cards
 option, this modifies the existing deck.</p>
 <p><strong>Review forgotten cards</strong><br />
-Show all the cards, for which you've answered Again (1) within the number of days
+Show all the cards, for which you’ve answered Again (1) within the number of days
 you specify.</p>
 <p><strong>Review ahead</strong><br />
 Show cards that will be due in the near future (the number of days you
 specify). This is useful for working through some of your older cards
-before a vacation, but it will not help with cards you have learnt
+before a vacation, but it will not help with cards you have learned
 recently. Please see the <a href="#reviewing-ahead">reviewing ahead</a> section
 below for more info.</p>
 <p><strong>Preview new cards</strong><br />
@@ -204,40 +230,34 @@ review cards as they are answered.</p>
 <p><strong>Study by card state or tag</strong><br />
 Select a certain number of cards from the current deck to study. You can
 choose to select new cards only, due cards only, or all cards; after you
-click &quot;Choose Tags&quot;, you can also limit the selected cards by tags. If
+click “Choose Tags”, you can also limit the selected cards by tags. If
 you wish to see all the cards in the deck (for instance, to study before
 a big test), you can set the number of cards to more than the number of
 cards in the deck.</p>
 <h2 id="home-decks"><a class="header" href="#home-decks">Home Decks</a></h2>
 <p>When a card is moved to a filtered deck, it retains a link to the deck,
-from which it came. That previous deck is said to be the card's 'home
-deck'.</p>
+from which it came. That previous deck is said to be the card’s “home
+deck”.</p>
 <p>Cards automatically return to their home deck after they are studied in
 the filtered deck. This can be after a single review, or after multiple
 reviews, depending on your settings.</p>
 <p>It is also possible to move all cards back to their home decks at once:</p>
 <ul>
 <li>
-<p>The &quot;Empty&quot; button in the study overview moves all cards in the
+<p>The “Empty” button in the study overview moves all cards in the
 filtered deck back to their home deck, but does not delete the empty
 filtered deck. This can be useful if you want to fill it again later
 (using the Rebuild button).</p>
 </li>
 <li>
-<p>Deleting a filtered deck does the same thing as &quot;Empty&quot; does, but
+<p>Deleting a filtered deck does the same thing as “Empty” does, but
 also removes the emptied deck from the deck list. No cards are
 deleted when you delete a filtered deck.</p>
 </li>
 </ul>
-<p>In the old scheduler, if you create, rebuild, empty, or delete a
-filtered deck while cards are still in learning, they will be turned
-back into new cards. In the case of failed reviews in relearning, any
-remaining relearning steps will be skipped. This was fixed in the
-<a href="https://faqs.ankiweb.net/the-anki-2.1-scheduler.html">v2 scheduler</a> so cards
-are no longer reset.</p>
 <h2 id="creating-manually"><a class="header" href="#creating-manually">Creating Manually</a></h2>
 <p>Advanced users can create filtered decks with arbitrary search strings
-(or 'filters'),
+(or “filters”),
 instead of relying on the preset filters. To create a filtered deck manually,
 choose Create Filtered Deck from the Tools menu.</p>
 <p>When you click the Build button, Anki finds cards that match the
@@ -245,7 +265,7 @@ settings you specified, and temporarily moves them from their existing
 decks into your new filtered deck for study.</p>
 <p>If you wish to fetch cards again using the same filter options (for
 instance, if you want to study all cards with a particular tag every
-day), you can use the Rebuild button at the bottom of the deck's
+day), you can use the Rebuild button at the bottom of the deck’s
 overview screen.</p>
 <p>The <strong>search</strong> area controls what cards Anki will gather. All of the
 searches possible in the browser are also possible for filtered decks,
@@ -253,21 +273,23 @@ such as limiting to tags, finding cards forgotten a certain number of
 times, and so on. Please see the <a href="searching.html">searching</a> section of the
 manual for more information on the different possibilities.</p>
 <p>Filtered decks cannot pull in cards that are suspended, buried, or already in a
-different filtered deck. And if you are using the v1 scheduler, cards in
-(re)learning will not be included either. For this reason, a search in the
+different filtered deck. For this reason, a search in the
 browser may reveal cards that do not end up in the filtered deck.</p>
 <p>The <strong>limit</strong> option controls how many cards will be gathered into the
 deck. The order you select controls both the order cards are gathered
-in, and the order they will be reviewed in. If you select &quot;most lapses&quot;
+in, and the order they will be reviewed in. If you select “most lapses”
 and a limit of 20 for example, then Anki will show you only the 20 most
 lapsed cards.</p>
+<p>The <strong>enable second filter</strong> option allows you to create a filtered deck
+comprised of two different searches, so that you can, for example, include
+due cards with one order, and a smaller amount of new cards with a different order.</p>
 <h2 id="order"><a class="header" href="#order">Order</a></h2>
-<p>The &quot;cards selected by&quot; option controls the order that cards will appear
+<p>The “cards selected by” option controls the order that cards will appear
 in. If the maximum number of cards you select is lower than the number
 of cards that match the filter criteria, Anki will exclude the cards at
 the end of this sorted list first.</p>
 <p><strong>Oldest seen first</strong><br />
-Display those cards first, that you haven't seen in reviews for the longest
+Display those cards first, that you haven’t seen in reviews for the longest
 time.</p>
 <p><strong>Random</strong><br />
 Randomize the order of all cards that match the filter criteria (use no
@@ -285,51 +307,33 @@ creation date).</p>
 Display cards with the earliest due date first.</p>
 <p><strong>Latest added first</strong><br />
 Display cards that you have most recently added to the deck first.
-(This is the opposite of 'Order added'.)</p>
+(This is the opposite of “Order added”.)</p>
 <p><strong>Relative overdueness</strong><br />
-Display cards that you're most likely to have forgotten first. This is useful if
+Display cards that you’re most likely to have forgotten first. This is useful if
 you have a large backlog that may take some time to get through, and you want to
 reduce the chances of forgetting more cards.</p>
-<p>When using the SM-2 scheduler, overduessness is determined by comparing how
+<p>When using the SM-2 algorithm, overduessness is determined by comparing how
 overdue cards are, and how long their interval is. For example, a card with a
 current interval of 5 days that is overdue by 2 days, will display before a card
 with a current interval of 10 days that is overdue by 3 days.</p>
-<p>When using FSRS, overdueness is calculated based on on each card's retrievability,
+<p>When using FSRS, overdueness is calculated based on on each card’s retrievability,
 and the desired retention in the deck preset.</p>
 <h2 id="steps--returning"><a class="header" href="#steps--returning">Steps &amp; Returning</a></h2>
-<p>Please see the section on <a href="studying.html#learningrelearning-cards">learning</a> as a reminder of how
-steps work.</p>
 <p>By default, Anki will use the steps of a card’s home deck. If a new card
-would normally be reviewed twice when being learnt, the same thing will
-happen when you study it in a filtered deck.</p>
+would normally be reviewed twice when being learned, the same thing will
+happen when you study it in a filtered deck.
+To learn about how (re)learning steps work, see <a href="deck-options.html#learning-steps">Deck Options</a> section.</p>
 <p>Cards return to their home deck when (re)learning is complete. Thus if
 you have 3 learning steps, a new card will return to its home deck upon
-three presses of &quot;Good&quot; or a single press of &quot;Easy&quot;.</p>
-<p><strong>v1 and v2 scheduler</strong></p>
-<p>In the v1 scheduler, the <strong>custom steps</strong> option allows you to override the
-home deck’s steps and provide your own steps instead. The provided steps apply to both
-cards being learnt, lapsed reviews, and reviews ahead of time. Please note, however, that
-from the <a href="https://faqs.ankiweb.net/the-anki-2.1-scheduler.html">v2 scheduler</a>
-filtered decks <a href="https://forums.ankiweb.net/t/filtered-deck-interval-problem/11834/8">no longer support custom steps</a>.</p>
-<p><strong>v3 scheduler</strong></p>
-<p>Filtered decks with rescheduling disabled show 4 buttons in the
-<a href="https://faqs.ankiweb.net/the-2021-scheduler.html">v3 scheduler</a> - the provided
-delay applies to the Again button, and Hard/Good will use 1.5x and 2x the
-provided delay. Easy will remove the card.</p>
-<h2 id="counts"><a class="header" href="#counts">Counts</a></h2>
-<p>In a filtered deck, reviews that were already due are displayed in the
-review count as normal. Learning cards and non-due reviews are counted
-in the new card count, due to how the underlying implementation works.
-Reviews that were not due are not scheduled like new cards however:
-Anki uses a special algorithm that takes into account how close they
-were to their normal due time when reviewed.</p>
+three presses of “Good” or a single press of “Easy”.</p>
+<p>Filtered decks with rescheduling disabled show 4 buttons. The <strong>Again</strong>, <strong>Hard</strong>, and <strong>Good</strong> buttons have configurable delays. The <strong>Easy</strong> button removes cards from the filtered deck.</p>
 <h2 id="due-reviews"><a class="header" href="#due-reviews">Due Reviews</a></h2>
 <p>If the filtered deck includes cards that were due for review, they will
 be shown like they would have been in their original deck: they appear
 in the review card count at the bottom of the screen, and there are four
 choices for how well you remembered. Upon a correct answer, the card
 will be moved back to its home deck, and its next delay adjusted using
-the home deck's settings. If you forget the card, it will be shown
+the home deck’s settings. If you forget the card, it will be shown
 according to the relearning steps defined in the home deck.</p>
 <h2 id="reviewing-ahead"><a class="header" href="#reviewing-ahead">Reviewing Ahead</a></h2>
 <p>If your search included cards that are not due, Anki will show the
@@ -342,44 +346,30 @@ they were scheduled however, their new delay will be similar to their
 previous delay. This calculation works on a sliding scale.</p>
 <p>Because reviewing a card shortly after it is scheduled has little impact
 on scheduling (e.g. a card due tomorrow with a one day interval will
-remain due tomorrow if reviewed early), <strong>the &quot;review ahead&quot; custom
+remain due tomorrow if reviewed early), <strong>the “review ahead” custom
 study setting is not appropriate for repeated use</strong>. If used to go
-through a week's worth of cards before a trip, the mature cards will be
+through a week’s worth of cards before a trip, the mature cards will be
 rescheduled into the future and the new cards will remain at small
-intervals, because you don't know them well enough for them to be
-rescheduled further. If you review ahead again the next day, all you'll
+intervals, because you don’t know them well enough for them to be
+rescheduled further. If you review ahead again the next day, all you’ll
 end up doing is going through those same new cards again, to little
 benefit.</p>
-<p>Early reviews are included in the new card count rather than the review
-count, and will be shown according to the number of relearning steps
-defined in the home deck (unless you have provided custom steps). This
-means that if you have customized the number of relearning steps in the
-home deck, the non-due card may be shown more than once.</p>
-<p>If you have multiple steps, Anki will only consider the first answer
-when deciding the next delay, and like relearning in normal decks,
-&quot;Good&quot; and &quot;Easy&quot; differ only in the step change and not the resulting
-delay.</p>
 <h2 id="rescheduling"><a class="header" href="#rescheduling">Rescheduling</a></h2>
 <p>By default, Anki will return cards to their home decks with altered scheduling,
-based on your performance in the filtered deck. There is a <strong>reschedule
-cards based on my answers</strong> option available which alters this behaviour.</p>
-<p>From the <a href="https://faqs.ankiweb.net/the-anki-2.1-scheduler.html">v2 scheduler</a>,
-when rescheduling is disabled, cards are shown in a simple &quot;preview mode&quot;, and
-when they are returned to the original deck, they are returned exactly as they
-started.</p>
-<p>In the v1 scheduler, cards were presented more similarly to how they normally
-are, but studying cards had side effects, and the original position of new cards
-was lost when you studied them.</p>
+based on your performance in the filtered deck.</p>
+<p>To change this behaviour, turn off <strong>Reschedule
+cards based on my answers</strong>. When this is turned off, cards are shown in a simple “preview mode”, and
+when they are returned to their original deck, they are returned exactly as they started.</p>
 <h2 id="catching-up"><a class="header" href="#catching-up">Catching Up</a></h2>
-<p>Filtered decks can be useful for catching up when you've fallen behind
+<p>Filtered decks can be useful for catching up when you’ve fallen behind
 in your reviews. One Anki user describes the way they use the filtered
 decks to catch up as follows:</p>
 <pre><code>I did this for a backlog of 800 cards with filtered subdecks. Worked
 very well for me.
 
-Just Due filter with: &quot;is:due prop:due&gt;-7&quot;
+Just Due filter with: "is:due prop:due&gt;-7"
 
-Over Due filter with: &quot;is:due prop:due&lt;=-7&quot;
+Over Due filter with: "is:due prop:due&lt;=-7"
 
 The Just Due deck will then contain cards that became due in the past
 week. That's the deck you should study every day as it gets the cards
@@ -405,7 +395,7 @@ day like you would for new cards. Up to you.
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="searching.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="searching.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -419,7 +409,7 @@ day like you would for new cards. Up to you.
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="searching.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="searching.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
@@ -429,21 +419,22 @@ day like you would for new cards. Up to you.
 
 
 
-        <script type="text/javascript">
+        <script>
             window.playground_copyable = true;
         </script>
 
 
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
 
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
 
         <!-- Custom JS scripts -->
 
 
+    </div>
     </body>
 </html>
