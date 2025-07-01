@@ -180,6 +180,14 @@ matches "は", "ば", and "ぱ".
 
 Searches that ignore combining characters are slower than regular searches.
 
+## Strip cloze deletion before beforehand
+Requires Anki 25.07+.
+You can use `sc:` (sc stands for “strip clozes”) to make Anki find the de-clozed text. For example:
+`sc:erheblich` matches the following cloze deletion card:
+e{{c1::rheblich}} (german) = {{c2::considerable}}
+
+Searches that strip clozes before search are slower than regular searches.
+
 ## Regular expressions
 
 Anki 2.1.24+, AnkiMobile 2.0.60+ and AnkiDroid 2.17+ support searching in notes with "regular expressions",
