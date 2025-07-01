@@ -179,6 +179,7 @@
 <li><a href="#limiting-to-a-field">Limiting to a field</a></li>
 <li><a href="#tags-decks-cards-and-notes">Tags, decks, cards and notes</a></li>
 <li><a href="#ignoring-accentscombining-characters">Ignoring accents/combining characters</a></li>
+<li><a href="#strip-cloze-deletions-before-search">Strip cloze deletions before search</a></li>
 <li><a href="#regular-expressions">Regular expressions</a></li>
 <li><a href="#card-state">Card state</a></li>
 <li><a href="#flags">Flags</a></li>
@@ -339,6 +340,12 @@ matches notes with “uber”, “über”, “Über” and so on.</p>
 <p><code>nc:は</code><br />
 matches “は”, “ば”, and “ぱ”.</p>
 <p>Searches that ignore combining characters are slower than regular searches.</p>
+<h2 id="strip-cloze-deletions-before-search"><a class="header" href="#strip-cloze-deletions-before-search">Strip cloze deletions before search</a></h2>
+<p>Requires Anki ⁨25.07+.</p>
+<p>You can use <code>sc:</code> (sc stands for “strip clozes”) to make the Anki browser search and find de-clozed text. For example:
+<code>sc:mnemonic</code></p>
+<p>matches the following cloze deletion card:
+{{c1::mn}}{{c2::e}}monic (is a trick for remembering something.)</p>
 <h2 id="regular-expressions"><a class="header" href="#regular-expressions">Regular expressions</a></h2>
 <p>Anki 2.1.24+, AnkiMobile 2.0.60+ and AnkiDroid 2.17+ support searching in notes with “regular expressions”,
 a standard and powerful way of searching in text.</p>
