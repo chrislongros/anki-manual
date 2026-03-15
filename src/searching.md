@@ -180,18 +180,19 @@ matches "は", "ば", and "ぱ".
 
 Searches that ignore combining characters are slower than regular searches.
 
-## Strip cloze deletions before search
+## Searching in cloze deletions
+
 Requires Anki 25.07+.
 
-You can use `sc:` (sc stands for “strip clozes”) to make the Anki browser search and find de-clozed text. For example:
-`sc:mnemonic`
+You can use `sc:` (sc stands for “strip clozes”) to search through the full text of notes with cloze deletions, ignoring the cloze markup. For example:
 
-matches the following cloze deletion card:
-```
-{{c1::mn}}{{c2::e}}monic (is a trick for remembering something.)
-```
+`sc:mnemonic`\
+matches a note containing `{{c1::mn}}{{c2::e}}monic`.
 
-Searches that use the sc keyword are slower than regular searches.
+`sc:capital of France`\
+matches a note containing `The {{c1::capital}} of {{c2::France}}`.
+
+Searches that strip cloze deletions are slower than regular searches.
 
 ## Regular expressions
 
