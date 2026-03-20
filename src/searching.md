@@ -184,7 +184,8 @@ Searches that ignore combining characters are slower than regular searches.
 
 Requires Anki 25.07+.
 
-You can use `sc:` (sc stands for “strip clozes”) to search through the full text of notes with cloze deletions, ignoring the cloze markup. For example:
+You can use `sc:` (sc stands for “strip clozes”) to search through the full text
+of notes with cloze deletions, ignoring the cloze markup. For example:
 
 `sc:mnemonic`\
 matches a note containing `{{c1::mn}}{{c2::e}}monic`.
